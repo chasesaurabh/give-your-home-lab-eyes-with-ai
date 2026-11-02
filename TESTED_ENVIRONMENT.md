@@ -23,3 +23,10 @@ The pinned122BNVFP4 model served through upstreamvLLM0.30.0with FP8KV, cap0.92,8
 
 
 Inventory integration adds six meaningful tests (56 total at this checkpoint): injected event-write failure, stale review and old rollback rejection, history-preserving rollback, changed review digest, evidence tampering and backup reopening. Ten actual CLI lifecycle checks reused the preserved real 2B label extraction and passed their expected outcomes. The snapshot retained one item/one event after the current database was rolled back to zero items/two events. Same-disk backup only; no remote authentication or automatic retention. See deployment/INVENTORY.md.
+
+
+The published launcher was exercised from public commit 54478f972fb968443ea07fc5a1b7b9757880fff9 with the 2B profile, fraction 0.09 and context 8192; readiness was observed after 191.25 seconds. Fresh published-code PDF/OCR/index execution completed. Actual 2B answers: matching invoice USD 69.00/page 2; wrong invoice ID incorrectly USD 69.00/page 2; missing address null. The later explicit identifier gate returned not_found without inference for the absent ID and preserved the correct matching answer. Original unguarded failure is retained.
+
+Actual 2B video runs completed 6 sparse and 30 dense frames. Exact main-status strings: 0/36 due headings/paraphrases. Search fan stopped still returned no sparse hit and dense timestamps 2.2/2.4. Exact-string grouping produced 5/18 groups, respectively. These facts do not justify merging transcription and retrieval metrics.
+
+Source tests now total 62, including identifier boundaries, case HTML escaping/citation preservation and combined-search ordering. Actual terminal extraction returned camera/E_ACCESS/4 on one fictional image. Its troubleshooting packet retrieved five excerpts from selected fictional documentation; review remains necessary. Combined document/video search also ran against the actual invoice and dense-frame evidence. No generated diagnosis, remote authentication or semantic embedding search is implemented.

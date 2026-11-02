@@ -2,6 +2,7 @@
 from __future__ import annotations
 import hashlib
 import json
+import re
 from dataclasses import asdict
 from pathlib import Path
 from .contracts import SourceReference
@@ -107,18 +108,29 @@ def search_document(index: Path, query: str, top_k=5) -> dict:
         notice='Exact retrieved excerpts, not generated answers. BM25 scores are not confidence probabilities.')
 
 
-def ask_document(index: Path, question: str, output: Path, model: str, base: str) -> dict:
+def ask_document(index: Path, question: str, output: Path, model: str, base: str,
+                 required_identifier: str | None = None) -> dict:
     from .image import normalize_image
     from .provider import LocalVisionClient, ProviderError
     if not question.strip() or len(question)>1000:raise ValueError('question must contain1to1000characters')
+    if required_identifier is not None and not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._/-]{0,79}',required_identifier):
+        raise ValueError('required identifier must be 1 to 80 literal identifier characters')
     retrieval=search_document(index,question,top_k=5)
+    if required_identifier is not None:
+        pattern=re.compile(r'(?<![A-Za-z0-9._/-])'+re.escape(required_identifier)+r'(?![A-Za-z0-9._/-])')
+        retrieval['hits']=[hit for hit in retrieval['hits'] if pattern.search(hit['text'])]
+        retrieval['state']='review_required' if retrieval['hits'] else 'not_found'
+        retrieval['required_identifier']=required_identifier
+        retrieval['identifier_check']='Exact case-sensitive occurrence in retrieved text/OCR excerpts. Not semantic identity verification; OCR errors can cause conservative rejection.'
     output.mkdir(parents=True,exist_ok=False)
     (output/'retrieval.json').write_text(json.dumps(retrieval,indent=2),encoding='utf-8')
-    result=dict(state='processing',question=question,model=model,answer=None,cited_pages=[],evidence=[])
+    result=dict(state='processing',question=question,model=model,answer=None,cited_pages=[],evidence=[],required_identifier=required_identifier)
     record=output/'answer.json'
     try:
         if not retrieval['hits']:
-            result['state']='not_found';return result
+            result['state']='not_found'
+            result['reason']='No retrieved excerpt contains the required identifier' if required_identifier is not None else 'No matching retrieved excerpt'
+            return result
         pages=[];images=[]
         for hit in retrieval['hits']:
             if hit['page'] in pages:continue

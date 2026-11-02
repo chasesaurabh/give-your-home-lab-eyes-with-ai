@@ -60,3 +60,20 @@ class DocumentApplicationTests(unittest.TestCase):
                 record=json.loads((root/f'answer-{number}/answer.json').read_text())
                 self.assertEqual(record['state'],'failed_or_interrupted')
                 self.assertEqual(record['provider_response'],{'fixture':True})
+
+    def test_missing_or_partial_identifier_blocks_model(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary);index=root/'index';index_document(self.bundle(root),index)
+            for identifier in ['INV-9999','INV-204','2042','inv-2042']:
+                with patch('homelab_vision.provider.LocalVisionClient') as client:
+                    result=ask_document(index,'invoice total',root/identifier,'fixture-model','http://127.0.0.1:1',identifier)
+                    self.assertEqual(result['state'],'not_found');client.assert_not_called()
+
+    def test_exact_identifier_allows_model_without_claiming_truth(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary);index=root/'index';index_document(self.bundle(root),index)
+            value=dict(answer='USD 69.00',cited_pages=[1],limitations=None)
+            with patch('homelab_vision.provider.LocalVisionClient') as client:
+                client.return_value.analyze.return_value=VisionReply(value,{'fixture':True},.1)
+                result=ask_document(index,'invoice total',root/'answer','fixture-model','http://127.0.0.1:1','INV-2042')
+                self.assertEqual(result['state'],'review_required');client.return_value.analyze.assert_called_once()

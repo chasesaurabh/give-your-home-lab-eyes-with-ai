@@ -82,6 +82,8 @@ Keep prompt-only and `--structured` results separate. A schema does not make wro
 
 The separate [large-model study](studies/large-vision-2026-11-02/README.md) adds 648 actual 27B/122B request records, including context-limit and server failures. Its verifier command, configurations and limitations are in that study's README. Model download/start profiles are documented in [MODELS.md](deployment/MODELS.md). Neither study establishes general accuracy or the largest possible model for a GPU.
 
+The [context follow-up](studies/context-followup-2026-11-02/README.md) reran the 36-request 122B workload with a 40,960-token configured context. All requests completed with exact fields and no errors. It is a remedy test after known 8,192-context failures, not held-out accuracy; the original failed run remains published.
+
 ## PDF pages and local OCR
 
 See [the document workflow](deployment/DOCUMENTS.md) for native page preparation and a network-disabled CPU OCR container. It includes a portable wrapper, exact limits, page/word provenance, synthetic fixtures and observed results. The converter routes pages for review; it does not automatically accept document facts.
@@ -96,3 +98,5 @@ See [the video workflow](deployment/VIDEO.md) for the restricted decoder and ori
 - `tests`: deterministic boundary and local HTTP contract tests.
 
 The [inventory workflow](deployment/INVENTORY.md) now connects a label proposal to an explicit review, revision-checked transaction, history-preserving rollback and database backup. Its local confirmation is not remote authentication. Semantic retrieval, live-camera monitoring and autonomous repair are not implemented in this snapshot. See `TESTED_ENVIRONMENT.md` and `THIRD_PARTY.md`.
+
+[Investigation packets and combined search](deployment/PROJECTS.md) connect a screenshot observation to selected manuals and search PDF/video evidence together while preserving page citations and frame timestamps. These commands do not generate a diagnosis or execute repairs.

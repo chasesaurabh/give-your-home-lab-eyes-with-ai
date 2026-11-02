@@ -71,6 +71,7 @@ def main(argv=None) -> int:
     adoc.add_argument("--output",type=Path,required=True)
     adoc.add_argument("--model",required=True)
     adoc.add_argument("--base",default="http://127.0.0.1:18104")
+    adoc.add_argument('--require-identifier',help='Require this exact identifier in retrieved excerpts before model inference')
     inventory = commands.add_parser('inventory', help='Review, commit, export and roll back local inventory')
     inventory.add_argument('--database',type=Path,required=True)
     actions = inventory.add_subparsers(dest='action',required=True)
@@ -93,8 +94,25 @@ def main(argv=None) -> int:
     undo.add_argument('--confirm',action='store_true')
     backup = actions.add_parser('backup')
     backup.add_argument('--output',type=Path,required=True)
+    case = commands.add_parser('troubleshoot',help='Build a review packet from a screenshot analysis and selected Markdown manuals')
+    case.add_argument('analysis',type=Path)
+    case.add_argument('--manual',type=Path,action='append',required=True)
+    case.add_argument('--question',required=True)
+    case.add_argument('--output',type=Path,required=True)
+    library = commands.add_parser('search-library',help='Search selected document and video indexes with distinct citations')
+    library.add_argument('query')
+    library.add_argument('--document',type=Path,action='append',default=[])
+    library.add_argument('--video',type=Path,action='append',default=[])
+    library.add_argument('--top-k',type=int,default=10)
     args = parser.parse_args(argv)
-    if args.command == 'inventory':
+    if args.command == 'search-library':
+        from .library import search_library
+        print(json.dumps(search_library(args.query,args.document,args.video,args.top_k),indent=2))
+    elif args.command == 'troubleshoot':
+        from .troubleshooting import build_case
+        result=build_case(args.analysis,args.manual,args.question,args.output)
+        print(json.dumps(dict(state=result['state'],excerpts=len(result['hits'])),indent=2))
+    elif args.command == 'inventory':
         from . import inventory_app as app
         if args.action == 'init':
             app.initialize(args.database)
@@ -175,7 +193,7 @@ def main(argv=None) -> int:
         print(json.dumps(search_document(args.index,args.query,args.top_k),indent=2))
     elif args.command == "ask-document":
         from .document_app import ask_document
-        result=ask_document(args.index,args.question,args.output,args.model,args.base)
+        result=ask_document(args.index,args.question,args.output,args.model,args.base,args.require_identifier)
         print(json.dumps({key:result[key] for key in ['state','answer','cited_pages']},indent=2))
     return 0
 
