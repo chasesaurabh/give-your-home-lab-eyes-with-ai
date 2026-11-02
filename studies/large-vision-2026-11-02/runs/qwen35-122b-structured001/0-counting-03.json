@@ -1,0 +1,91 @@
+{
+  "case_id": "counting-03",
+  "task": "counting",
+  "repeat": 0,
+  "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "794a087a25ea62c399e215f650e2f919017ab73d3a46f0b73f0fd9742280e2ab"
+  ],
+  "started_utc": "2026-11-02T18:55:49.762786+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "circles": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "squares": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "circles",
+          "squares"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "response": {
+    "id": "chatcmpl-8e1d13f74f890810",
+    "object": "chat.completion",
+    "created": 1793645749,
+    "model": "book4-qwen35-122b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"circles\": 5,\n  \"squares\": 4\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-30fb3e99",
+    "usage": {
+      "prompt_tokens": 644,
+      "total_tokens": 665,
+      "completion_tokens": 21,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 2,
+    "total_fields": 2,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 1.4947911000344902
+}

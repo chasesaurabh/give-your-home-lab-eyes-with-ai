@@ -2,7 +2,7 @@
 
 Local vision applications and reproducible experiment tools for the book of the same name.
 
-**Development companion for the second edition.** Current code provides image-to-structured proposals, PDF page evidence and local OCR, source-bearing Markdown search, and controlled evaluation scripts. Complete document applications, video integration and the full model study remain under development. This is not the frozen book release. A verified edition-2 book link and immutable release tag will be added when available.
+**Development companion for the second edition.** Current code provides image-to-structured proposals, PDF/OCR evidence with page-cited search and answer proposals, bounded video decoding with per-frame descriptions and timestamp-linked search, source-bearing Markdown search, and controlled evaluation scripts. The full project and model study remain under development. This is not the frozen book release. A verified edition-2 book link and immutable release tag will be added when available.
 
 Code is MIT licensed. Model weights and dependencies have separate licenses. Book text, covers, private documents and model weights are excluded.
 
@@ -80,15 +80,19 @@ Generators record hashes and ground truth. Inspect inputs before evaluating. The
 
 Keep prompt-only and `--structured` results separate. A schema does not make wrong values correct or prevent output-budget exhaustion. Keep failures in the denominator. The [initial study](studies/initial-vision-2026-11-02/README.md) includes 846 actual responses and original fictional inputs. Verify all hashes and recompute scores offline with `python experiments/verify_study.py`. Later models may need `--thinking off`; template defaults are not identical across model sizes.
 
+The separate [large-model study](studies/large-vision-2026-11-02/README.md) adds 648 actual 27B/122B request records, including context-limit and server failures. Its verifier command, configurations and limitations are in that study's README. Model download/start profiles are documented in [MODELS.md](deployment/MODELS.md). Neither study establishes general accuracy or the largest possible model for a GPU.
+
 ## PDF pages and local OCR
 
 See [the document workflow](deployment/DOCUMENTS.md) for native page preparation and a network-disabled CPU OCR container. It includes a portable wrapper, exact limits, page/word provenance, synthetic fixtures and observed results. The converter routes pages for review; it does not automatically accept document facts.
 
 ## Scope
 
+See [the video workflow](deployment/VIDEO.md) for the restricted decoder and original short-event experiment. Sparse and dense samples were actually decoded and checked against source pixels and timestamps. This is file-video evidence, not a live-camera or general event-detection benchmark.
+
 - `src/homelab_vision`: image normalization, model adapter, contracts, lexical retrieval, confirmation-gated inventory primitive, policy, lineage, frame-sampling primitives.
 - `experiments`: original fixture generators and evaluator.
 - `fixtures/source`: fictional examples.
 - `tests`: deterministic boundary and local HTTP contract tests.
 
-Inventory and video primitives are not complete applications yet. Semantic retrieval, live-camera monitoring and autonomous repair are not implemented in this development snapshot. See `TESTED_ENVIRONMENT.md` and `THIRD_PARTY.md`.
+Inventory integration remains under development. Semantic retrieval, live-camera monitoring and autonomous repair are not implemented in this snapshot. See `TESTED_ENVIRONMENT.md` and `THIRD_PARTY.md`.

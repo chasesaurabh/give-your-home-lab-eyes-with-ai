@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "split": "workload_diagnostic",
+  "cases": [
+    {
+      "id": "edge640-count1",
+      "task": "edge640-count1",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge640-count2",
+      "task": "edge640-count2",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge640-count4",
+      "task": "edge640-count4",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge640-count8",
+      "task": "edge640-count8",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        },
+        {
+          "path": "label-640.png",
+          "sha256": "dcc49e2425d4d4643ed68e6429dfb1dc9c74fed4bf48033a11b75fa5b0fe23bc",
+          "width": 640,
+          "height": 427
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge1280-count1",
+      "task": "edge1280-count1",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge1280-count2",
+      "task": "edge1280-count2",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge1280-count4",
+      "task": "edge1280-count4",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge1280-count8",
+      "task": "edge1280-count8",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "path": "label-1280.png",
+          "sha256": "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+          "width": 1280,
+          "height": 853
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge2560-count1",
+      "task": "edge2560-count1",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge2560-count2",
+      "task": "edge2560-count2",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge2560-count4",
+      "task": "edge2560-count4",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "edge2560-count8",
+      "task": "edge2560-count8",
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+      "images": [
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "path": "label-2560.png",
+          "sha256": "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+          "width": 2560,
+          "height": 1707
+        }
+      ],
+      "expected": {
+        "asset_id": "LAB-135",
+        "model": "Juniper-11",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    }
+  ],
+  "note": "One development label resized by interpolation and repeated. No new visual information; not an accuracy benchmark. Tests image processing/context/fit at one runtime configuration. Preserve rejection/OOM as outcomes.",
+  "source_manifest_sha256": "c4be11a785e6985a2f45b3324f240633d65d7a8ccc040c7bb9df650fa5ff2250",
+  "generator_sha256": "bbc0c6c82dbdb73dd4ef4e2f9c83e6a4c71361f7747f857cca238dd0454069d1"
+}

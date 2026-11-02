@@ -1,0 +1,68 @@
+{
+  "case_id": "edge2560-count2",
+  "task": "edge2560-count2",
+  "repeat": 1,
+  "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+  "image_hashes": [
+    "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e",
+    "7b159ae984d654c705513494a75e011734ee53778d980d33b1f0e9464608a31e"
+  ],
+  "started_utc": "2026-11-02T19:17:06.531110+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ports": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "power": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "model",
+          "ports",
+          "power"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "error": "HTTP Error 400: Bad Request",
+  "error_type": "HTTPError",
+  "score": {
+    "exact": false,
+    "correct_fields": 0,
+    "total_fields": 4
+  },
+  "http_status": 400,
+  "error_body": "{\"error\":{\"message\":\"Input length (8544) exceeds model's maximum context length (8192).\",\"type\":\"BadRequestError\",\"param\":null,\"code\":400}}",
+  "error_body_truncated": false,
+  "seconds": 0.0442482999060303
+}

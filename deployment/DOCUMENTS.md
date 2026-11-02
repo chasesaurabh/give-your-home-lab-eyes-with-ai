@@ -48,3 +48,18 @@ Measured development evidence: Tesseract 5.3.0 recovered the complete normalized
 To ask the local vision model for invoice fields, select a page PNG and run `homelab-vision analyze ... --task invoice --model YOUR_ALIAS --output NEW_DIRECTORY`. Compare proposed fields to the page and OCR; neither result should silently override the other. A rendered synthetic invoice returned `INV-2042`, `USD`, and `69.0` correctly in the tested 2B configuration. Other document layouts remain to be evaluated.
 
 Keep sources and derived text protected. Delete a disposable run directory only after verifying its exact path; no deletion command is executed automatically by these tools.
+
+## Page-cited retrieval
+
+After inspecting the pages and OCR, build a new derived index:
+
+```bash
+homelab-vision index-document runs/pages-first --ocr runs/ocr-first/result/ocr.json --output runs/document-index
+homelab-vision search-document "invoice total" runs/document-index
+```
+
+Omit `--ocr` for a digital-text-only PDF. The index uses text-layer pages or the matching OCR result for pages routed to OCR. It retains page PNGs, original PDF hashes, page numbers, line locators and OCR word boxes. All results remain `review_required`; the routing heuristic is not a factual approval. Missing OCR yields `no_searchable_text_review` rather than invented text. Hashes and the original PDF identity prevent accidentally combining OCR from another source. Search verifies the retained page records and images before returning excerpts.
+
+This baseline uses BM25 over groups of up to eight text lines. Scores are not confidence probabilities. A term can match an irrelevant page; `not_found` means this lexical search returned no excerpt, not that the entire source contains no possible answer. On the actual fictional mixed-PDF fixture, searching `INV-2042 total` returned the OCR page with its correct printed USD69.00 total and separate digital-text excerpts with page/line citations. That integration test does not establish retrieval quality on a larger corpus.
+
+`ask-document "question" INDEX --model ALIAS --output NEW_DIRECTORY` sends normalized images of at most two retrieved pages to the local VLM, saves the retrieved excerpts and image hashes, and restricts citation numbers to supplied pages. A cited answer still needs visual verification. Actual122BNVFP4 probes returned USD69.00with citations to both fixture pages, and null/empty citations for a different invoice ID and an absent delivery address. These are three single integration probes, not a benchmark. The tested server rejected `uniqueItems`; duplicate-citation validation therefore runs in application code. A subsequent first request failed with a logged multimodal-cache mismatch; its preserved deliberate retry succeeded. HTTP error details and incomplete/invalid raw responses are retained rather than silently discarded.

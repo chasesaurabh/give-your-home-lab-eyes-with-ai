@@ -1,0 +1,105 @@
+{
+  "case_id": "label-09",
+  "task": "label",
+  "repeat": 1,
+  "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "04123d6693c2a5ae6f1a29550ea4ae74aa8b2c781f55d13b06d5c241c9f59b34"
+  ],
+  "started_utc": "2026-11-02T18:24:44.455041+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ports": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "power": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "model",
+          "ports",
+          "power"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "response": {
+    "id": "chatcmpl-a092e204d77b74ea",
+    "object": "chat.completion",
+    "created": 1793643884,
+    "model": "book4-qwen35-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"asset_id\": \"LAB-828\",\n  \"model\": \"Aspen-13\",\n  \"ports\": 4,\n  \"power\": \"24VDC\"\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-4b464092",
+    "usage": {
+      "prompt_tokens": 647,
+      "total_tokens": 695,
+      "completion_tokens": 48,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 3,
+    "total_fields": 4,
+    "exact": false,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 2.7160354999359697
+}

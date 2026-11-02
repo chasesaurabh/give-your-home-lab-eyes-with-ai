@@ -1,0 +1,86 @@
+{
+  "case_id": "frames-08",
+  "task": "frames",
+  "repeat": 2,
+  "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "0e659a198b8466a0efe437658c4bc3137025112d5f01dc96bd2f94627f7befd2",
+    "1d79e0ef97126b5a7a6033fad6f444cabaa7542598212e1a64a71a8e80371e2e",
+    "62bb57da17ffa287756f1fdbe2800741af3d99bed0204dfdf08ee4900d2d369a"
+  ],
+  "started_utc": "2026-11-02T19:00:07.593311+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "first_alarm_seconds": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "first_alarm_seconds"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "response": {
+    "id": "chatcmpl-8551a1c1f8726fd2",
+    "object": "chat.completion",
+    "created": 1793646007,
+    "model": "book4-qwen35-122b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"first_alarm_seconds\": 80\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-30fb3e99",
+    "usage": {
+      "prompt_tokens": 1856,
+      "total_tokens": 1870,
+      "completion_tokens": 14,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 1,
+    "total_fields": 1,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 1.217706099851057
+}

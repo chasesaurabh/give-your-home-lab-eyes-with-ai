@@ -5,6 +5,7 @@ import base64
 import json
 import time
 import urllib.request
+import urllib.error
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -14,11 +15,14 @@ from jsonschema.exceptions import ValidationError
 
 
 class ProviderError(RuntimeError):
-    pass
+    def __init__(self,message: str,details: dict | None = None):
+        super().__init__(message)
+        self.details=details or {}
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
+        fp.close()
         raise ProviderError("Provider redirects are disabled")
 
 
@@ -51,8 +55,13 @@ class LocalVisionClient:
         request = urllib.request.Request(self.base + path,
             data=None if payload is None else json.dumps(payload).encode(),
             headers={"Content-Type": "application/json"})
-        with self.opener.open(request, timeout=self.timeout) as response:
-            body = response.read(2_000_001)
+        try:
+            with self.opener.open(request, timeout=self.timeout) as response:
+                body = response.read(2_000_001)
+        except urllib.error.HTTPError as error:
+            with error:body=error.read(2_000_001)
+            raise ProviderError(f'Provider HTTP {error.code}',dict(http_status=error.code,
+                body=body[:2_000_000].decode('utf-8',errors='replace'),truncated=len(body)>2_000_000)) from error
         if len(body) > 2_000_000:
             raise ProviderError("Provider response exceeded the byte limit")
         return json.loads(body)
@@ -95,12 +104,12 @@ class LocalVisionClient:
         seconds = time.perf_counter() - started
         choice = raw["choices"][0]
         if choice.get("finish_reason") != "stop":
-            raise ProviderError("Incomplete provider output; retain the input and retry deliberately")
+            raise ProviderError("Incomplete provider output; retain the input and retry deliberately",dict(provider_response=raw))
         try:
             value = json.loads(choice["message"]["content"])
             Draft202012Validator(schema).validate(value)
         except (ValueError, TypeError, ValidationError) as error:
-            raise ProviderError("Provider did not return valid JSON") from error
+            raise ProviderError("Provider did not return valid JSON",dict(provider_response=raw)) from error
         if not isinstance(value, dict):
             raise ProviderError("Provider returned a non-object")
         return VisionReply(value=value, raw=raw, seconds=seconds)

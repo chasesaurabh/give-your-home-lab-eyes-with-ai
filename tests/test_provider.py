@@ -30,7 +30,7 @@ class ProviderTests(unittest.TestCase):
                 self.wfile.write(b'{"data":[{"id":"fixture-model"}]}')
             def do_POST(self):
                 state["request"] = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
-                self.send_response(200); self.end_headers()
+                self.send_response(state.get('status',200)); self.end_headers()
                 self.wfile.write(json.dumps({"choices": [{"message": {"content": state["reply"]},
                     "finish_reason": state["finish"]}]}).encode())
         server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
@@ -50,6 +50,11 @@ class ProviderTests(unittest.TestCase):
                     with self.assertRaises(ProviderError): client.analyze([path], "Read ports", schema)
                 state["reply"] = '{"ports":8}'; state["finish"] = "length"
                 with self.assertRaises(ProviderError): client.analyze([path], "Read ports", schema)
+                state['status']=400
+                with self.assertRaises(ProviderError) as caught:client.analyze([path],"Read ports",schema)
+                self.assertEqual(caught.exception.details['http_status'],400)
+                self.assertIn('choices',caught.exception.details['body'])
+                state['status']=200
                 state["redirect"] = True
                 with self.assertRaises(ProviderError): client.identity()
         finally:

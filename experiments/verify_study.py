@@ -22,6 +22,9 @@ for run in sorted((root/'runs').iterdir()):
     assert len({(r['case_id'],r['repeat']) for r in rows})==len(rows)==len(expected)*3
     exact=0
     for row in rows:
+        if 'error' in row:
+            assert row['score']['exact'] is False and row['score']['correct_fields']==0
+            continue
         checked=score(row['response']['choices'][0]['message']['content'],expected[row['case_id']])
         assert checked['exact']==row['score']['exact'],row['case_id']
         exact+=checked['exact']

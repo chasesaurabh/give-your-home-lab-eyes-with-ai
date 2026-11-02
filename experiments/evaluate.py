@@ -6,6 +6,7 @@ import json
 import random
 import time
 import urllib.request
+import urllib.error
 import atexit
 import subprocess
 from datetime import datetime, timezone
@@ -28,6 +29,7 @@ def score(content, expected):
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self,req,fp,code,msg,headers,newurl):
+        fp.close()
         raise ValueError('Research endpoint redirects are disabled')
 
 def request(base,path,payload=None):
@@ -120,7 +122,13 @@ def main():
             try:
                 response=request(args.base,'/v1/chat/completions',payload)
                 result.update(response=response,score=score(response['choices'][0]['message']['content'],case['expected']))
-            except Exception as exc: result.update(error=str(exc),score=dict(exact=False,correct_fields=0,total_fields=len(case['expected'])))
+            except Exception as exc:
+                result.update(error=str(exc),error_type=type(exc).__name__,score=dict(exact=False,correct_fields=0,total_fields=len(case['expected'])))
+                if isinstance(exc,urllib.error.HTTPError):
+                    result['http_status']=exc.code
+                    with exc:body=exc.read(2_000_001)
+                    result['error_body']=body[:2_000_000].decode('utf-8',errors='replace')
+                    result['error_body_truncated']=len(body)>2_000_000
             result['seconds']=time.perf_counter()-start
             (args.output/f'{repeat}-{case["id"]}.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
             records.append(result)

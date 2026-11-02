@@ -1,0 +1,7 @@
+{
+  "requests": 36,
+  "exact": 23,
+  "errors": 13,
+  "split": "workload_diagnostic",
+  "note": "Controlled synthetic task results, not general accuracy. Strict JSON/field score; inspect raw outputs and failure types."
+}

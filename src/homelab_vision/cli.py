@@ -43,6 +43,34 @@ def main(argv=None) -> int:
     ocr.add_argument("--output", type=Path, required=True)
     ocr.add_argument("--tesseract", default="tesseract")
     ocr.add_argument("--psm", type=int, choices=[3,6,11], default=3)
+    video = commands.add_parser("prepare-video", help="Decode bounded video samples with source timestamps")
+    video.add_argument("source", type=Path)
+    video.add_argument("--output", type=Path, required=True)
+    video.add_argument("--interval", type=float, default=1.0)
+    avideo = commands.add_parser("analyze-video", help="Describe each verified sampled frame as a review proposal")
+    avideo.add_argument("bundle", type=Path)
+    avideo.add_argument("--output", type=Path, required=True)
+    avideo.add_argument("--model", required=True)
+    avideo.add_argument("--base", default="http://127.0.0.1:18104")
+    svideo = commands.add_parser("search-video", help="Search frame proposals with source timestamps")
+    svideo.add_argument("query")
+    svideo.add_argument("analysis",type=Path)
+    summary = commands.add_parser("summarize-video",help="Group observed frame transcriptions without inferring continuity")
+    summary.add_argument("analysis",type=Path)
+    idoc = commands.add_parser("index-document", help="Create page-cited text/OCR search evidence")
+    idoc.add_argument("bundle",type=Path)
+    idoc.add_argument("--ocr",type=Path)
+    idoc.add_argument("--output",type=Path,required=True)
+    sdoc = commands.add_parser("search-document",help="Retrieve PDF excerpts with page citations")
+    sdoc.add_argument("query")
+    sdoc.add_argument("index",type=Path)
+    sdoc.add_argument("--top-k",type=int,default=5)
+    adoc = commands.add_parser("ask-document",help="Retrieve up to two PDF pages and save a cited answer proposal")
+    adoc.add_argument("question")
+    adoc.add_argument("index",type=Path)
+    adoc.add_argument("--output",type=Path,required=True)
+    adoc.add_argument("--model",required=True)
+    adoc.add_argument("--base",default="http://127.0.0.1:18104")
     args = parser.parse_args(argv)
     if args.command == "analyze":
         if not 64 <= args.max_edge <= 4096:
@@ -55,7 +83,12 @@ def main(argv=None) -> int:
             normalized_sha256=normalized.output_sha256,
             image="images/" + normalized.output_path.name, transform=transform, task=args.task))
         prompt, schema = TASKS[args.task]
-        reply = LocalVisionClient(args.model, args.base).analyze([normalized.output_path], prompt, schema)
+        try:
+            reply = LocalVisionClient(args.model, args.base).analyze([normalized.output_path], prompt, schema)
+        except Exception as error:
+            write_new(args.output / 'failure.json',dict(state='failed',model=args.model,prompt=prompt,schema=schema,
+                error_type=type(error).__name__,message=str(error),details=getattr(error,'details',{})))
+            raise
         write_new(args.output / "proposal.json", dict(status="review_required", task=args.task,
             model=args.model, seconds=reply.seconds, fields=reply.value,
             source_sha256=normalized.source_sha256, image_sha256=normalized.output_sha256,
@@ -79,6 +112,31 @@ def main(argv=None) -> int:
         from .ocr import ocr_bundle
         result = ocr_bundle(args.bundle,args.output,executable=args.tesseract,psm=args.psm)
         print(json.dumps(dict(state=result['state'],pages=len(result['pages']),engine=result['engine'])))
+    elif args.command == "prepare-video":
+        from .video_decode import decode_video
+        result = decode_video(args.source, args.output, interval=args.interval)
+        print(json.dumps(dict(state=result['state'],frames=len(result['frames']))))
+    elif args.command == "analyze-video":
+        from .video_analysis import analyze_frames
+        result = analyze_frames(args.bundle,args.output,args.model,args.base)
+        print(json.dumps(dict(state=result['state'],frames=len(result['frames']))))
+    elif args.command == "search-video":
+        from .video_analysis import search_frames
+        print(json.dumps(search_frames(args.analysis,args.query),indent=2))
+    elif args.command == "summarize-video":
+        from .video_analysis import summarize_frames
+        print(json.dumps(summarize_frames(args.analysis),indent=2))
+    elif args.command == "index-document":
+        from .document_app import index_document
+        result=index_document(args.bundle,args.output,args.ocr)
+        print(json.dumps(dict(state=result['state'],pages=len(result['pages']))))
+    elif args.command == "search-document":
+        from .document_app import search_document
+        print(json.dumps(search_document(args.index,args.query,args.top_k),indent=2))
+    elif args.command == "ask-document":
+        from .document_app import ask_document
+        result=ask_document(args.index,args.question,args.output,args.model,args.base)
+        print(json.dumps({key:result[key] for key in ['state','answer','cited_pages']},indent=2))
     return 0
 
 

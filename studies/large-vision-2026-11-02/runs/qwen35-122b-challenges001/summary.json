@@ -1,0 +1,7 @@
+{
+  "requests": 126,
+  "exact": 124,
+  "errors": 0,
+  "split": "challenge_evaluation",
+  "note": "Controlled synthetic task results, not general accuracy. Strict JSON/field score; inspect raw outputs and failure types."
+}

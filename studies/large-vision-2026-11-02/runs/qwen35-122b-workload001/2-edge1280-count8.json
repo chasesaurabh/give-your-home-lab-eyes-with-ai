@@ -1,0 +1,74 @@
+{
+  "case_id": "edge1280-count8",
+  "task": "edge1280-count8",
+  "repeat": 2,
+  "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable. If multiple copies of the label are provided, extract the same label once.",
+  "image_hashes": [
+    "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+    "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+    "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+    "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+    "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+    "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+    "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0",
+    "cceb074fd4eb01dd00ca4efdbd0533073c7b0a2f4561c455249d0a89618a79a0"
+  ],
+  "started_utc": "2026-11-02T19:17:21.144897+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ports": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "power": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "model",
+          "ports",
+          "power"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "error": "HTTP Error 400: Bad Request",
+  "error_type": "HTTPError",
+  "score": {
+    "exact": false,
+    "correct_fields": 0,
+    "total_fields": 4
+  },
+  "http_status": 400,
+  "error_body": "{\"error\":{\"message\":\"Input length (8716) exceeds model's maximum context length (8192).\",\"type\":\"BadRequestError\",\"param\":null,\"code\":400}}",
+  "error_body_truncated": false,
+  "seconds": 0.04004990006797016
+}
