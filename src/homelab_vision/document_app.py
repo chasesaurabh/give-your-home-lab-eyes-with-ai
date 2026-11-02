@@ -142,7 +142,8 @@ def ask_document(index: Path, question: str, output: Path, model: str, base: str
             images.append(normalized.output_path)
             result['evidence'].append(dict(page=hit['page'],source=hit['source'],
                 source_page_sha256=hit['image_sha256'],model_image_sha256=normalized.output_sha256,
-                image=normalized.output_path.relative_to(output).as_posix(),transform=asdict(normalized.transform)))
+                image=normalized.output_path.relative_to(output).as_posix(),transform=asdict(normalized.transform),
+                normalization=normalized.normalization))
             if len(pages)==2:break
         schema=dict(type='object',properties=dict(answer=dict(type=['string','null']),
             cited_pages=dict(type='array',items=dict(type='integer',enum=pages)),

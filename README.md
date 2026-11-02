@@ -48,6 +48,14 @@ Wait for server readiness. Loading may take minutes. Stop with `docker stop home
 
 ## Read an image
 
+Inspect preprocessing without a model:
+
+```bash
+homelab-vision normalize fixtures/source/status-panel.png --max-edge 320 --output runs/normalize-first
+```
+
+This writes `input.json` and a normalized PNG, with no inference. The `normalize-v2` policy bounds source bytes/pixels, applies orientation, composites transparency on white, converts to RGB and strips inherited metadata. It records the Pillow version and explicitly does **not** perform ICC color management. Original files remain unchanged and are not automatically copied into the bundle.
+
 ```bash
 homelab-vision analyze fixtures/source/status-panel.png --task describe --model vision-2b --output runs/status-first
 ```
@@ -100,3 +108,8 @@ See [the video workflow](deployment/VIDEO.md) for the restricted decoder and ori
 The [inventory workflow](deployment/INVENTORY.md) now connects a label proposal to an explicit review, revision-checked transaction, history-preserving rollback and database backup. Its local confirmation is not remote authentication. Semantic retrieval, live-camera monitoring and autonomous repair are not implemented in this snapshot. See `TESTED_ENVIRONMENT.md` and `THIRD_PARTY.md`.
 
 [Investigation packets and combined search](deployment/PROJECTS.md) connect a screenshot observation to selected manuals and search PDF/video evidence together while preserving page citations and frame timestamps. These commands do not generate a diagnosis or execute repairs.
+
+
+## Paired precision study
+
+The [same-checkpoint online-FP8 study](studies/paired-fp8-2026-11-02/README.md) adds306actual requests and preserves the unchanged BF16 comparator. FP8 reduced the logged model-loading allocation, but was slower on recorded medians and did not resolve the similar-character failures. Strict and separately normalized scores,200ms total-device samples, raw replies and offline verification are included. This is development evidence, not a general accuracy or smaller-device guarantee.

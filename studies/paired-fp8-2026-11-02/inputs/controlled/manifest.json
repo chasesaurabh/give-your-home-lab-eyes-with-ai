@@ -1,0 +1,1079 @@
+{
+  "schema_version": 1,
+  "split": "evaluation",
+  "provenance": "Original synthetic fixtures. No personal data. No real-world representativeness claimed.",
+  "generator_sha256": "0ee2061524c943f473725a187f2b61ee1a4d8a1b0d1c581df37aab686d55a633",
+  "font_sha256": "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a",
+  "cases": [
+    {
+      "id": "label-00",
+      "task": "label",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "label-00-0.png",
+          "sha256": "fa9f1ccbc94c5109596a96290d140e5caed988d11c68c3ae3e728d00a1d6102a"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-567",
+        "model": "Maple-6",
+        "ports": 4,
+        "power": "5 V DC"
+      }
+    },
+    {
+      "id": "label-01",
+      "task": "label",
+      "variant": "rotation-3deg-blur-0.4",
+      "images": [
+        {
+          "path": "label-01-0.png",
+          "sha256": "770b514163d3925f28d0cef9e21ebbf50776dde1a3911749ac9d1421bc5211e6"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-599",
+        "model": "Aspen-4",
+        "ports": 8,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "label-02",
+      "task": "label",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "label-02-0.png",
+          "sha256": "8ec7a117222fd41b8361dc7c809f343b7609be8609411f0776ff6924594692b2"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-937",
+        "model": "Maple-7",
+        "ports": 4,
+        "power": "5 V DC"
+      }
+    },
+    {
+      "id": "label-03",
+      "task": "label",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "label-03-0.png",
+          "sha256": "254eb38ba2fc4bed8aba2c62e75831b09cf6d60755a831960bd9faf048f1f3f7"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-278",
+        "model": "Juniper-16",
+        "ports": 16,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "label-04",
+      "task": "label",
+      "variant": "rotation-3deg-blur-0.4",
+      "images": [
+        {
+          "path": "label-04-0.png",
+          "sha256": "734e50075cdc38f299d169c640a6a39d18275beaba2bdea7d7af9399ec801d67"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-156",
+        "model": "Aspen-14",
+        "ports": 8,
+        "power": "24 V DC"
+      }
+    },
+    {
+      "id": "label-05",
+      "task": "label",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "label-05-0.png",
+          "sha256": "183260d9d8b92a3359b1f6cf1b613ea3318330d948747b72a59e3389bcd0d4c7"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-943",
+        "model": "Maple-18",
+        "ports": 8,
+        "power": "24 V DC"
+      }
+    },
+    {
+      "id": "label-06",
+      "task": "label",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "label-06-0.png",
+          "sha256": "ae1d8f77ee591f94fd8ade7b269357763f97f548dc5d13e4d18f247a273b069d"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-815",
+        "model": "Maple-17",
+        "ports": 24,
+        "power": "5 V DC"
+      }
+    },
+    {
+      "id": "label-07",
+      "task": "label",
+      "variant": "rotation-3deg-blur-0.4",
+      "images": [
+        {
+          "path": "label-07-0.png",
+          "sha256": "3af2dd25f4bd8fff92e25692950f4496d5cef174a79e429e8cac55f7b7ce3b05"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-368",
+        "model": "Maple-17",
+        "ports": 24,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "label-08",
+      "task": "label",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "label-08-0.png",
+          "sha256": "05a6817a000b1f3a0e76f844ce6652ede5123c08128ddd0735d4d9d1c47cd032"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-338",
+        "model": "Aspen-14",
+        "ports": 8,
+        "power": "12 V DC"
+      }
+    },
+    {
+      "id": "label-09",
+      "task": "label",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "label-09-0.png",
+          "sha256": "04123d6693c2a5ae6f1a29550ea4ae74aa8b2c781f55d13b06d5c241c9f59b34"
+        }
+      ],
+      "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "asset_id": "LAB-828",
+        "model": "Aspen-13",
+        "ports": 4,
+        "power": "24 V DC"
+      }
+    },
+    {
+      "id": "document-00",
+      "task": "document",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "document-00-0.png",
+          "sha256": "7105c88d8998a2cd0344fbc84316d83eb1e2f525278b56789cbcff84e8e52679"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-2545",
+        "quantity": 8,
+        "total_usd": 336
+      }
+    },
+    {
+      "id": "document-01",
+      "task": "document",
+      "variant": "rotation-3deg-blur-0.4",
+      "images": [
+        {
+          "path": "document-01-0.png",
+          "sha256": "7b2f916b4ca9c0d888ef76a87ce903f684667bbd52624ed908ba4885449057de"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-9239",
+        "quantity": 8,
+        "total_usd": 472
+      }
+    },
+    {
+      "id": "document-02",
+      "task": "document",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "document-02-0.png",
+          "sha256": "a76dac532b9856c40f1e763e3fb12c3167243b250202d7f62f93769496bdfa56"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-6408",
+        "quantity": 2,
+        "total_usd": 86
+      }
+    },
+    {
+      "id": "document-03",
+      "task": "document",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "document-03-0.png",
+          "sha256": "3650bbaefbdaf9e82c0d1ebb86a39a3bc4f7cf8cd003d24bd60411b42ea7f34f"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-6122",
+        "quantity": 7,
+        "total_usd": 231
+      }
+    },
+    {
+      "id": "document-04",
+      "task": "document",
+      "variant": "rotation-3deg-blur-0.4",
+      "images": [
+        {
+          "path": "document-04-0.png",
+          "sha256": "bc36b3a24288481e8b291cb183f87a0edccf41bb524ecf6bd195d94f410df172"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-8427",
+        "quantity": 2,
+        "total_usd": 86
+      }
+    },
+    {
+      "id": "document-05",
+      "task": "document",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "document-05-0.png",
+          "sha256": "c6e72908db77f498219429ca618dbbcc4f8102414e95d5b3db552bb8b519d6e4"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-8290",
+        "quantity": 2,
+        "total_usd": 92
+      }
+    },
+    {
+      "id": "document-06",
+      "task": "document",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "document-06-0.png",
+          "sha256": "f548d81614952402e401452c11d88a30f2057c7f6bca692c4fcdf8c489c4e164"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-6719",
+        "quantity": 8,
+        "total_usd": 264
+      }
+    },
+    {
+      "id": "document-07",
+      "task": "document",
+      "variant": "rotation-3deg-blur-0.4",
+      "images": [
+        {
+          "path": "document-07-0.png",
+          "sha256": "78204ea1bf355d31023ca201a2299b6551cfd1b0faf82b9bbea9870c8166722d"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-1514",
+        "quantity": 7,
+        "total_usd": 168
+      }
+    },
+    {
+      "id": "document-08",
+      "task": "document",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "document-08-0.png",
+          "sha256": "45adca4a187f8889669d0131bb945a91d29960eae271c9d51f5ce691592312c1"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-4930",
+        "quantity": 2,
+        "total_usd": 46
+      }
+    },
+    {
+      "id": "document-09",
+      "task": "document",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "document-09-0.png",
+          "sha256": "5237fd47f3bbc0dd88613404292c7d0d98725cf752fb4cb97620709246580936"
+        }
+      ],
+      "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "invoice_id": "INV-8809",
+        "quantity": 6,
+        "total_usd": 348
+      }
+    },
+    {
+      "id": "screenshot-00",
+      "task": "screenshot",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "screenshot-00-0.png",
+          "sha256": "1f94ec59f2f1b9a3ac6f4415854d82a28ef027957ed06ac1bba550a5ce285917"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "camera",
+        "error_code": "E_ACCESS",
+        "retries": 4
+      }
+    },
+    {
+      "id": "screenshot-01",
+      "task": "screenshot",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "screenshot-01-0.png",
+          "sha256": "c9f064e9820b5ef1f8b669571584164b590eccb691678c5ebc34bb254a7ff75b"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "camera",
+        "error_code": "E_ACCESS",
+        "retries": 1
+      }
+    },
+    {
+      "id": "screenshot-02",
+      "task": "screenshot",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "screenshot-02-0.png",
+          "sha256": "4be73e8cc90230c491d12e5f9e3a0308fa6d4aea183b9c54805a65ab1071e285"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "archive",
+        "error_code": "E_DISK_FULL",
+        "retries": 5
+      }
+    },
+    {
+      "id": "screenshot-03",
+      "task": "screenshot",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "screenshot-03-0.png",
+          "sha256": "1f94ec59f2f1b9a3ac6f4415854d82a28ef027957ed06ac1bba550a5ce285917"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "camera",
+        "error_code": "E_ACCESS",
+        "retries": 4
+      }
+    },
+    {
+      "id": "screenshot-04",
+      "task": "screenshot",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "screenshot-04-0.png",
+          "sha256": "07bfb5476b97571ccda86eb4bcb503f99cf418d9495a6cbf4c92e2a9f531bead"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "archive",
+        "error_code": "E_TIMEOUT",
+        "retries": 1
+      }
+    },
+    {
+      "id": "screenshot-05",
+      "task": "screenshot",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "screenshot-05-0.png",
+          "sha256": "beed12e4d6763fbfa1509b89659e53219f384da655b071d6a0b72470f4c45f4c"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "camera",
+        "error_code": "E_ACCESS",
+        "retries": 1
+      }
+    },
+    {
+      "id": "screenshot-06",
+      "task": "screenshot",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "screenshot-06-0.png",
+          "sha256": "2a98e5efd2ccea93af19a7b601bfcc26c595c12fe3b784cf9c6f19b057d00d1b"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "archive",
+        "error_code": "E_DISK_FULL",
+        "retries": 6
+      }
+    },
+    {
+      "id": "screenshot-07",
+      "task": "screenshot",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "screenshot-07-0.png",
+          "sha256": "1b59dc02357d924e0c8420939b90772b5c71d3112668485096edc38eb873d7f5"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "archive",
+        "error_code": "E_DISK_FULL",
+        "retries": 4
+      }
+    },
+    {
+      "id": "screenshot-08",
+      "task": "screenshot",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "screenshot-08-0.png",
+          "sha256": "e2d077b413f10d0b7d76a126d0c75996603034a6b019bb8332beec6193fea6f2"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "indexer",
+        "error_code": "E_ACCESS",
+        "retries": 2
+      }
+    },
+    {
+      "id": "screenshot-09",
+      "task": "screenshot",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "screenshot-09-0.png",
+          "sha256": "456637816b48004c66439907e56e8c0b88692c3b0d3ed0d7cd1fc8ab652eb227"
+        }
+      ],
+      "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "service": "ocr",
+        "error_code": "E_ACCESS",
+        "retries": 1
+      }
+    },
+    {
+      "id": "chart-00",
+      "task": "chart",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "chart-00-0.png",
+          "sha256": "1d8731a0e8b43104915bf935587e0a8207b6382a7db7fd49fa5c3f4f230d3753"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "A",
+        "jobs_b": 60
+      }
+    },
+    {
+      "id": "chart-01",
+      "task": "chart",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "chart-01-0.png",
+          "sha256": "84b6225a3be2879d666d9059e978bcc72b5bf88763e53a511a91870cbf6ffe05"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "A",
+        "jobs_b": 30
+      }
+    },
+    {
+      "id": "chart-02",
+      "task": "chart",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "chart-02-0.png",
+          "sha256": "76433304cebc5eef7545d21fdeaff4ae7cbedee4975a6cc2a2a9210699426920"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "D",
+        "jobs_b": 75
+      }
+    },
+    {
+      "id": "chart-03",
+      "task": "chart",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "chart-03-0.png",
+          "sha256": "585556a21356c4cc45df334246bf9d7d224f14521d94dd40bf66af46ab3e41e2"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "B",
+        "jobs_b": 90
+      }
+    },
+    {
+      "id": "chart-04",
+      "task": "chart",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "chart-04-0.png",
+          "sha256": "a4129721787d4fca37fe1b632eee01d6d9383b859dd14028360741496691cb87"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "A",
+        "jobs_b": 15
+      }
+    },
+    {
+      "id": "chart-05",
+      "task": "chart",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "chart-05-0.png",
+          "sha256": "ccdaf514a97f768bf11a76584801f6fa8a2ad9ac5c57a083a221bda348790d6b"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "D",
+        "jobs_b": 60
+      }
+    },
+    {
+      "id": "chart-06",
+      "task": "chart",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "chart-06-0.png",
+          "sha256": "7ad88b86429b24afb88b04d6a26216f4b94c52ee3bde490af8e51733e9d264eb"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "C",
+        "jobs_b": 25
+      }
+    },
+    {
+      "id": "chart-07",
+      "task": "chart",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "chart-07-0.png",
+          "sha256": "1c36b1814ef5804cadda3356bd661af2fd50d258b5d1eb96fff86da8f551fa82"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "C",
+        "jobs_b": 45
+      }
+    },
+    {
+      "id": "chart-08",
+      "task": "chart",
+      "variant": "small-text",
+      "images": [
+        {
+          "path": "chart-08-0.png",
+          "sha256": "11fde319d55e9b0a0aae63d0db550820abe426901fb40397d5d8806f6b001a2c"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "C",
+        "jobs_b": 45
+      }
+    },
+    {
+      "id": "chart-09",
+      "task": "chart",
+      "variant": "standard",
+      "images": [
+        {
+          "path": "chart-09-0.png",
+          "sha256": "535c8399f438b119fe7ec36ed8ef06f9e9a75846f93c67da2cd70c8f4cb8c3a6"
+        }
+      ],
+      "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "highest_node": "B",
+        "jobs_b": 90
+      }
+    },
+    {
+      "id": "counting-00",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-00-0.png",
+          "sha256": "41169e0c3c9ab2074e4d00550140ce72da60e8afb639e41da84ede3f506bbd2b"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 5,
+        "squares": 6
+      }
+    },
+    {
+      "id": "counting-01",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-01-0.png",
+          "sha256": "e7d8d9b78e4fb4c85a43fab70c3629b751be49b44dc57f30df81780bf5564f3b"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 4,
+        "squares": 5
+      }
+    },
+    {
+      "id": "counting-02",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-02-0.png",
+          "sha256": "30b9ffc65b9b30697ecff301d9637309b2bf1ea576e6be2fb2f99ba6852c9737"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 2,
+        "squares": 3
+      }
+    },
+    {
+      "id": "counting-03",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-03-0.png",
+          "sha256": "794a087a25ea62c399e215f650e2f919017ab73d3a46f0b73f0fd9742280e2ab"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 5,
+        "squares": 4
+      }
+    },
+    {
+      "id": "counting-04",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-04-0.png",
+          "sha256": "fd8d8d2b13479502b0ccc8804848159b4bf7c86379733627617aebb8c03214db"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 7,
+        "squares": 3
+      }
+    },
+    {
+      "id": "counting-05",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-05-0.png",
+          "sha256": "4599a262e29e90ca66ccb7f8926fda84e6f9949793d3951c83cd6fdda6434180"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 6,
+        "squares": 3
+      }
+    },
+    {
+      "id": "counting-06",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-06-0.png",
+          "sha256": "2fdea261ec51730b1ff0138d6f637b985268f0f2c0e195edf55d8cef676f7716"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 8,
+        "squares": 6
+      }
+    },
+    {
+      "id": "counting-07",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-07-0.png",
+          "sha256": "5db78f6f1989d917ba49f6d66aad961fc9fc5edb0f75b8f866729ab369a95fc1"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 8,
+        "squares": 8
+      }
+    },
+    {
+      "id": "counting-08",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-08-0.png",
+          "sha256": "87cdf750c01ef89126cbb60f184f602f221d66745a3cbf6eff5c6d3c3e7f06f3"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 2,
+        "squares": 5
+      }
+    },
+    {
+      "id": "counting-09",
+      "task": "counting",
+      "variant": "nonoverlapping-grid",
+      "images": [
+        {
+          "path": "counting-09-0.png",
+          "sha256": "f5e2598ed096ca84c095ba96446160e91db63f048654df86d09e5dcea0e79f97"
+        }
+      ],
+      "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "circles": 7,
+        "squares": 6
+      }
+    },
+    {
+      "id": "frames-00",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-00-0.png",
+          "sha256": "5ed6704c5df507f18ed87eeccb597d197fef9fbf621675fe32eb8dc065eba08a"
+        },
+        {
+          "path": "frames-00-1.png",
+          "sha256": "25584fe1f1379fcd1c27a0e91f5fccb120135c0f28098d5672759e0080eb46bb"
+        },
+        {
+          "path": "frames-00-2.png",
+          "sha256": "d7dffb8c03ec5e00f1a07d3e828761e30220116cb4fae2042c76faa00d23a38e"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 54
+      }
+    },
+    {
+      "id": "frames-01",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-01-0.png",
+          "sha256": "5eac65543dc51939e173a09d160a9903e5b10378db91e9aa61b2a9188c852bcf"
+        },
+        {
+          "path": "frames-01-1.png",
+          "sha256": "49b6d535b445388b77e49085545962f634a0d8834e6e7ca68ee62b8af9a8233f"
+        },
+        {
+          "path": "frames-01-2.png",
+          "sha256": "2306efa1525640d0e67e0ee4748b1730e75c5b902cda750b0188c6ab81ce3a3b"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 25
+      }
+    },
+    {
+      "id": "frames-02",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-02-0.png",
+          "sha256": "608e28a834ac46f230cb3af10779b44b4bad046b752ac2f8627ddab198dd7ee5"
+        },
+        {
+          "path": "frames-02-1.png",
+          "sha256": "a7845f470f5f812ee7269e1513c395c669610b21f90d2014dff0a2b732c2b637"
+        },
+        {
+          "path": "frames-02-2.png",
+          "sha256": "ad0747990737a04fc2ca6747020fbb83cf9700fd0da068b9586e37c27247ac50"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 38
+      }
+    },
+    {
+      "id": "frames-03",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-03-0.png",
+          "sha256": "203c3b212b7945c522a4ef6d9a961e8ce890fab04d0d96a8d6d808e386fd79e6"
+        },
+        {
+          "path": "frames-03-1.png",
+          "sha256": "c8dcd43d7a8cfef4cacb83bf5d3979bf6e51ac06b20717169afb08dbbd1181ad"
+        },
+        {
+          "path": "frames-03-2.png",
+          "sha256": "09173b613ee7787dedc3301e6177c94540185112edc2b50e85bf30675551c19e"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 57
+      }
+    },
+    {
+      "id": "frames-04",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-04-0.png",
+          "sha256": "1bfe5f71c91644cddb289be5966575db3c9ffabf94e2dfa10ccb4fe7b4133d59"
+        },
+        {
+          "path": "frames-04-1.png",
+          "sha256": "42cd8bc9e3ec50fb02c7f694001aa4b42aab691e269269ada31702efc271c428"
+        },
+        {
+          "path": "frames-04-2.png",
+          "sha256": "0e77a46169c02d903a3b34593df068112333001b9fa3f3d29e6c89d1cf03f972"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 16
+      }
+    },
+    {
+      "id": "frames-05",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-05-0.png",
+          "sha256": "578898760ecfeff532bc436a004a33c90745886aca8cd7bff41aa9391a5fafbe"
+        },
+        {
+          "path": "frames-05-1.png",
+          "sha256": "13200f6228be89473bd6081de2b48e6537f3b5da8cdd2dbc3401ae14866dc70e"
+        },
+        {
+          "path": "frames-05-2.png",
+          "sha256": "30bb1b4aca4132d85609e968f856162da3e23472a3615ca94718dd1f8ea3be6c"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 20
+      }
+    },
+    {
+      "id": "frames-06",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-06-0.png",
+          "sha256": "2809d075d1456778e6a4ce930e495e43bb55d1ac9dbb9bb4a7b792c1a4de1e63"
+        },
+        {
+          "path": "frames-06-1.png",
+          "sha256": "e608ea77a9954fb72d2cad8cfe2765fec0c19cbe629e6384c5d2cf85080b0f4b"
+        },
+        {
+          "path": "frames-06-2.png",
+          "sha256": "71f5cfcdeec0a5247acb50d0c86845bb1d6127000bcd1f1df2e7c039ac84006e"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 19
+      }
+    },
+    {
+      "id": "frames-07",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-07-0.png",
+          "sha256": "27bf45cef316e6458d6f330b358d035094f02cb5e5cfd4b4c80e42d103092b85"
+        },
+        {
+          "path": "frames-07-1.png",
+          "sha256": "eccc31fbc8789d12f0cf4dbbefa80b1cba919a3094bb4a7bcc97651aaef926ca"
+        },
+        {
+          "path": "frames-07-2.png",
+          "sha256": "88806296e83db9eb949c65670c68bd79530e5f8b816e1b7e1c88f96532bfa3ec"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 22
+      }
+    },
+    {
+      "id": "frames-08",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-08-0.png",
+          "sha256": "0e659a198b8466a0efe437658c4bc3137025112d5f01dc96bd2f94627f7befd2"
+        },
+        {
+          "path": "frames-08-1.png",
+          "sha256": "1d79e0ef97126b5a7a6033fad6f444cabaa7542598212e1a64a71a8e80371e2e"
+        },
+        {
+          "path": "frames-08-2.png",
+          "sha256": "62bb57da17ffa287756f1fdbe2800741af3d99bed0204dfdf08ee4900d2d369a"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 80
+      }
+    },
+    {
+      "id": "frames-09",
+      "task": "frames",
+      "variant": "three-sampled-frames",
+      "images": [
+        {
+          "path": "frames-09-0.png",
+          "sha256": "af4f73d0c25752a2b3d99e63d38535aa8bff83c940f234408d77e2ba8a3fe46e"
+        },
+        {
+          "path": "frames-09-1.png",
+          "sha256": "09173b613ee7787dedc3301e6177c94540185112edc2b50e85bf30675551c19e"
+        },
+        {
+          "path": "frames-09-2.png",
+          "sha256": "34605b245807be5d6e802eae47f6e8670a26df0351f7e4061c5ac61fcee647a7"
+        }
+      ],
+      "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+      "expected": {
+        "first_alarm_seconds": 59
+      }
+    }
+  ]
+}

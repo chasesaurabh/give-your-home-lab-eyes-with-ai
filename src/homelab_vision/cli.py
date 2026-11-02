@@ -31,6 +31,10 @@ def main(argv=None) -> int:
     analyze.add_argument("--base", default="http://127.0.0.1:18104")
     analyze.add_argument("--output", type=Path, required=True, help="New directory; existing results never overwritten")
     analyze.add_argument("--max-edge", type=int, default=1600)
+    normalize = commands.add_parser("normalize", help="Inspect a bounded image derivative without calling a model")
+    normalize.add_argument("image", type=Path)
+    normalize.add_argument("--output", type=Path, required=True)
+    normalize.add_argument("--max-edge", type=int, default=1600)
     search = commands.add_parser("search-text", help="Search deliberately selected UTF-8 Markdown files")
     search.add_argument("query")
     search.add_argument("files", nargs="+", type=Path)
@@ -130,21 +134,31 @@ def main(argv=None) -> int:
         else:
             result = app.backup(args.database,args.output)
         print(json.dumps(result,indent=2))
-    elif args.command == "analyze":
+    elif args.command in {"analyze", "normalize"}:
         if not 64 <= args.max_edge <= 4096:
             parser.error("max-edge must be between 64 and 4096")
         args.output.mkdir(parents=True, exist_ok=False)
-        normalized = normalize_image(args.image, args.output / "images", max_edge=args.max_edge)
+        try:
+            normalized = normalize_image(args.image, args.output / "images", max_edge=args.max_edge)
+        except Exception as error:
+            write_new(args.output / 'failure.json',dict(state='failed',stage='normalization',
+                error_type=type(error).__name__,message=str(error)))
+            raise
         # The persisted evidence uses only the generated derivative name, not a private input path.
         transform = asdict(normalized.transform)
         write_new(args.output / "input.json", dict(source_sha256=normalized.source_sha256,
             normalized_sha256=normalized.output_sha256,
-            image="images/" + normalized.output_path.name, transform=transform, task=args.task))
+            image="images/" + normalized.output_path.name, transform=transform, task=getattr(args,'task',None),
+            normalization=normalized.normalization))
+        if args.command == "normalize":
+            print(json.dumps(dict(status="normalized", image="images/"+normalized.output_path.name,
+                width=transform['output_width'],height=transform['output_height']),indent=2))
+            return 0
         prompt, schema = TASKS[args.task]
         try:
             reply = LocalVisionClient(args.model, args.base).analyze([normalized.output_path], prompt, schema)
         except Exception as error:
-            write_new(args.output / 'failure.json',dict(state='failed',model=args.model,prompt=prompt,schema=schema,
+            write_new(args.output / 'failure.json',dict(state='failed',stage='provider',model=args.model,prompt=prompt,schema=schema,
                 error_type=type(error).__name__,message=str(error),details=getattr(error,'details',{})))
             raise
         write_new(args.output / "proposal.json", dict(status="review_required", task=args.task,

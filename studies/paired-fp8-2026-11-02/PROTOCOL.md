@@ -1,0 +1,11 @@
+# Paired online FP8 protocol — November 2, 2026
+
+Recorded before launching FP8 or seeing its outputs. The visual plan requires a same-model precision comparison. Use the exact already-evaluated Qwen3.5-27B checkpoint fc05daec18b0a78c049392ed2e771dde82bdf654, with upstream vLLM0.30.0 online --quantization fp8. The official runtime documentation describes dynamic FP8 quantization from BF16/FP16 without a calibration dataset. This is distinct from the separately packaged Qwen fine-grained block-FP8 checkpoint, which is not downloaded or used here.
+
+Primary reference checked November2: https://docs.vllm.ai/en/v0.30.0/features/quantization/llm_compressor/fp8/ (Online Dynamic Quantization). Model-specific compatibility is not assumed; startup/requests must prove it. Preserve any unsupported-kernel, startup or workload failure. Do not attribute vendor throughput/accuracy claims to this workstation.
+
+Initial comparison retains BF16-run runtime image, GPU fraction0.75, context8192, max sequences1, eager mode, cache dtypeauto, exact source checkpoint and original fixture pixels/prompts. Change weight/activation quantization flag tofp8. Explicit thinkingoff, temperature0, max256, JSON schema, same shuffle739+repeat and3repeats. Run development001 once first to verify transport/schema; do not tune on held evaluation results. Then evaluation001180requests and label-challenges001126requests. Keep strict score and existing prespecified power-only normalization separate. No identifier normalization. Published BF16 comparator remains unchanged.
+
+Record cold startup, logged model loading memory and actual kernel warnings, continuous200ms total-device samples, full raw responses and request latencies. Equal GPU fractions reserve comparable total memory even if quantized weights free capacity for cache; do not claim total allocation halves. Timing includes repeated-input caches and changed kernels; differences describe this configuration, not a universal precision-only speedup. No CPU offload requested. One sequence means no measured concurrent-throughput claim.
+
+If the primary run succeeds, a separate lower-allocation follow-up may assess practical capacity; declare its exact fraction before launch and retain it separately. No public book readiness follows from either experiment.

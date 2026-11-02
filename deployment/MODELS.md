@@ -26,3 +26,14 @@ The allocation column is a fraction of this workstation's97,887MiB, not a portab
 The122Btest runtime warned about uncalibrated FP8 attention/cache scale values1.0. Keep that warning in accuracy comparisons. NVIDIA's model card used a different NVIDIA container in its example; the code here records the upstream container actually tested. The controlled study returned 176/180 strict matches and the label challenge study 124/126, with no transport errors in those studies. A separate 36-request resolution/image-count diagnostic produced 23 exact responses, twelve context-limit HTTP 400 rejections and one logged cache-related HTTP 500. Those failures remain in the public large-model study. A longer-context diagnostic is separate follow-up work.
 
 Model sources: [2B](https://huggingface.co/Qwen/Qwen3.5-2B), [8B](https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct), [27B](https://huggingface.co/Qwen/Qwen3.5-27B), [122B NVFP4](https://huggingface.co/nvidia/Qwen3.5-122B-A10B-NVFP4). Weights are not included in this MIT repository.
+
+
+## Same-checkpoint online FP8
+
+The `27b-fp8` profile uses the same pinned BF16 checkpoint as `27b` and adds vLLM online `--quantization fp8`, with cache dtypeauto. It is not the separately packaged block-FP8 model. Reuse the already downloaded27B directory:
+
+```bash
+python deployment/start_model.py --profile 27b-fp8 --model-path models/qwen35-27b --gpu-fraction 0.75 --context 8192 --name homelab-vision-27b-fp8 --alias vision-27b-fp8 --dry-run
+```
+
+Inspect the command, then omit `--dry-run` to launch after stopping your own previous model server and freeing the same port. Actual research used equivalent recorded Docker arguments; this wrapper profile has a separate dry-run check. The profile keeps one sequence and eager execution. Same allocation fraction allows more cache after reducing model allocation; it does not promise a proportionate reduction in total-device memory. See the paired-precision study for observed results and limits.

@@ -1,0 +1,91 @@
+{
+  "case_id": "chart-04",
+  "task": "chart",
+  "repeat": 2,
+  "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "a4129721787d4fca37fe1b632eee01d6d9383b859dd14028360741496691cb87"
+  ],
+  "started_utc": "2026-11-02T20:21:19.320367+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "highest_node": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "jobs_b": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "highest_node",
+          "jobs_b"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "response": {
+    "id": "chatcmpl-a1fe815d7b180893",
+    "object": "chat.completion",
+    "created": 1793650879,
+    "model": "book4-qwen35-27b-fp8",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"highest_node\": \"A\",\n  \"jobs_b\": 15\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-8c213f94",
+    "usage": {
+      "prompt_tokens": 648,
+      "total_tokens": 670,
+      "completion_tokens": 22,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 2,
+    "total_fields": 2,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 1.4381358998361975
+}

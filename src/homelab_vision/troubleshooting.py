@@ -53,10 +53,12 @@ def build_case(analysis: Path, manuals: list[Path], question: str, output: Path)
             'What result would make you stop rather than change a setting?']
         sections=''.join('<section><h2>'+html.escape(h['source']['fixture_id']+' / '+h['source']['locator'])+
             '</h2><pre>'+html.escape(h['text'])+'</pre><p>Instruction-like text warning: '+str(h['instruction_like'])+'</p></section>' for h in record['hits'])
+        manuals_html='<h2>Retained full manuals</h2><p>Excerpts can omit a relevant paragraph. Expand a snapshot to read the surrounding context.</p>'+''.join(
+            '<details><summary>'+m['id']+'</summary><pre>'+html.escape((output/m['file']).read_text(encoding='utf-8'))+'</pre></details>' for m in record['manuals'])
         page='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'">
 <title>Review a troubleshooting case</title><style>body{font:17px/1.5 system-ui;max-width:1000px;margin:2rem auto;padding:0 1rem;color:#24313a}img{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section{border-top:1px solid #bbc7cc;padding:1rem 0}</style>
-<h1>Review the evidence before diagnosing</h1>'''+ '<p>'+html.escape(question)+'</p><img src="screenshot.png" alt="Retained screenshot evidence"><h2>Model observation — unverified</h2><pre>'+html.escape(json.dumps(record['observation'],indent=2))+'</pre><h2>Selected documentation excerpts</h2>'+sections+'<h2>Review questions</h2><ul>'+''.join('<li>'+html.escape(q)+'</li>' for q in record['review_questions'])+'</ul><p>'+html.escape(record['notice'])+'</p></html>'
+<h1>Review the evidence before diagnosing</h1>'''+ '<p>'+html.escape(question)+'</p><img src="screenshot.png" alt="Retained screenshot evidence"><h2>Model observation — unverified</h2><pre>'+html.escape(json.dumps(record['observation'],indent=2))+'</pre>'+manuals_html+'<h2>Selected documentation excerpts</h2>'+sections+'<h2>Review questions</h2><ul>'+''.join('<li>'+html.escape(q)+'</li>' for q in record['review_questions'])+'</ul><p>'+html.escape(record['notice'])+'</p></html>'
         (output/'review.html').write_text(page,encoding='utf-8')
     except BaseException:
         record['state']='failed_or_interrupted';raise
