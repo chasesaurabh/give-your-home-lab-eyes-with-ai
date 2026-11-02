@@ -1,0 +1,1385 @@
+{
+  "state": "completed",
+  "engine": "tesseract 5.3.0",
+  "image_id": "sha256:63c4810a73ecd5b7dcd31af523bde25df8d7381b3d7e145e7a0779151ac60deb",
+  "psm": 6,
+  "language": "eng",
+  "crop": [
+    100,
+    160,
+    650,
+    445
+  ],
+  "note": "Known-template crop, not automatic detection.12synthetic fixtures,3recipes,one OCR job each. Elapsed time includes Docker startup.",
+  "suite_sha256": "27fbb96fcc77b88c6dd4b6fe9dd5c496475aa4a362307f60bf9d4547ec92a223",
+  "results": [
+    {
+      "case_id": "clear-00",
+      "condition": "clear",
+      "recipe": "original",
+      "source_sha256": "a36f2c8a8066c8c55329f3cb7033174fab787ecf479b982dc8a7754bbbd1b06d",
+      "image": "clear-00/original.png",
+      "image_sha256": "a36f2c8a8066c8c55329f3cb7033174fab787ecf479b982dc8a7754bbbd1b06d",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-7937",
+        "model": "Cedar-21",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset_id: LAB-7937",
+        "model: Cedar-21",
+        "ports: 4",
+        "power: 12 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-7937",
+        "model": "Cedar-21",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.6263125999830663
+    },
+    {
+      "case_id": "clear-00",
+      "condition": "clear",
+      "recipe": "overview",
+      "source_sha256": "a36f2c8a8066c8c55329f3cb7033174fab787ecf479b982dc8a7754bbbd1b06d",
+      "image": "clear-00/normalized/a36f2c8a8066c8c5-b80ca0d07087.png",
+      "image_sha256": "05c866bbfb5b2596569fb365fac5cd7461a7bde5a0117ba872b992ab3a150f32",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-7937",
+        "model": "Cedar-21",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL",
+        "\u2018ascot id: LAB-TOQ7",
+        "model: Cedar-21",
+        "ports: 4",
+        "power: 12V DC"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": "Cedar-21",
+        "ports": 4,
+        "power": "12V DC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5824468999635428
+    },
+    {
+      "case_id": "clear-00",
+      "condition": "clear",
+      "recipe": "crop",
+      "source_sha256": "a36f2c8a8066c8c55329f3cb7033174fab787ecf479b982dc8a7754bbbd1b06d",
+      "image": "clear-00/crop.png",
+      "image_sha256": "cf189c0952ed443f6a8d0d43acfa4eaaf41e6416681d97c76fc7c2df382b40a7",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-7937",
+        "model": "Cedar-21",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "asset_id: LAB-7937",
+        "model: Cedar-21",
+        "ports: 4",
+        "power: 12 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-7937",
+        "model": "Cedar-21",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.5778419999405742
+    },
+    {
+      "case_id": "clear-01",
+      "condition": "clear",
+      "recipe": "original",
+      "source_sha256": "35edb9457d57f509054997f3cd4817f62bc40d356d8ccc012ee4683e8b862625",
+      "image": "clear-01/original.png",
+      "image_sha256": "35edb9457d57f509054997f3cd4817f62bc40d356d8ccc012ee4683e8b862625",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-6708",
+        "model": "Cedar-56",
+        "ports": 8,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset_id: LAB-6708",
+        "model: Cedar-56",
+        "ports: 8",
+        "power: 48 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-6708",
+        "model": "Cedar-56",
+        "ports": 8,
+        "power": "48 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.58242839993909
+    },
+    {
+      "case_id": "clear-01",
+      "condition": "clear",
+      "recipe": "overview",
+      "source_sha256": "35edb9457d57f509054997f3cd4817f62bc40d356d8ccc012ee4683e8b862625",
+      "image": "clear-01/normalized/35edb9457d57f509-b80ca0d07087.png",
+      "image_sha256": "497bef3c433ed16de2131b4fa6f0c9e9645c8ec2dd9d6eceddb6eb450772d6e6",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-6708",
+        "model": "Cedar-56",
+        "ports": 8,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL",
+        "\u2018ascot id: LAB-6708",
+        "model: Cedar-56",
+        "ports:",
+        "power: 48VDC"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": "Cedar-56",
+        "ports": null,
+        "power": "48VDC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": false,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5843634998891503
+    },
+    {
+      "case_id": "clear-01",
+      "condition": "clear",
+      "recipe": "crop",
+      "source_sha256": "35edb9457d57f509054997f3cd4817f62bc40d356d8ccc012ee4683e8b862625",
+      "image": "clear-01/crop.png",
+      "image_sha256": "0713bee66d6ee03a59a5158c95858fd201396c8051a0664327d9a57a300f35f4",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-6708",
+        "model": "Cedar-56",
+        "ports": 8,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "asset_id: LAB-6708",
+        "model: Cedar-56",
+        "ports: 8",
+        "power: 48 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-6708",
+        "model": "Cedar-56",
+        "ports": 8,
+        "power": "48 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.6006275999825448
+    },
+    {
+      "case_id": "clear-02",
+      "condition": "clear",
+      "recipe": "original",
+      "source_sha256": "6e3ad3e011c0a2c6821cce802b181af322b548086aba8405b2780d017f65f862",
+      "image": "clear-02/original.png",
+      "image_sha256": "6e3ad3e011c0a2c6821cce802b181af322b548086aba8405b2780d017f65f862",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-6250",
+        "model": "Cedar-88",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset_id: LAB-6250",
+        "model: Cedar-88",
+        "ports: 4",
+        "power: 12 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-6250",
+        "model": "Cedar-88",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.6125402001198381
+    },
+    {
+      "case_id": "clear-02",
+      "condition": "clear",
+      "recipe": "overview",
+      "source_sha256": "6e3ad3e011c0a2c6821cce802b181af322b548086aba8405b2780d017f65f862",
+      "image": "clear-02/normalized/6e3ad3e011c0a2c6-b80ca0d07087.png",
+      "image_sha256": "af3489e4e6cee3e156d488d9100aea5937caeacd7dc649ae63063a926adbfa79",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-6250",
+        "model": "Cedar-88",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL",
+        "\u2018ascot id: LAB-6250",
+        "model: Cedar-88",
+        "ports: 4",
+        "power: 12V DC"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": "Cedar-88",
+        "ports": 4,
+        "power": "12V DC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.578389799920842
+    },
+    {
+      "case_id": "clear-02",
+      "condition": "clear",
+      "recipe": "crop",
+      "source_sha256": "6e3ad3e011c0a2c6821cce802b181af322b548086aba8405b2780d017f65f862",
+      "image": "clear-02/crop.png",
+      "image_sha256": "3c5cbc3922def462a10a724e2b172a3a7d4e1bab9a535c8c0613eeb7276bc532",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-6250",
+        "model": "Cedar-88",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "asset_id: LAB-6250",
+        "model: Cedar-88",
+        "ports: 4",
+        "power: 12 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-6250",
+        "model": "Cedar-88",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.5895149002317339
+    },
+    {
+      "case_id": "clear-03",
+      "condition": "clear",
+      "recipe": "original",
+      "source_sha256": "6624c5dc802e80b2b0828b339b032dc0ce98bdcaf8928fc4dba103074f18bd7b",
+      "image": "clear-03/original.png",
+      "image_sha256": "6624c5dc802e80b2b0828b339b032dc0ce98bdcaf8928fc4dba103074f18bd7b",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-7903",
+        "model": "Cedar-45",
+        "ports": 24,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset_id: LAB-7903",
+        "model: Cedar-45",
+        "ports: 24",
+        "power: 24 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-7903",
+        "model": "Cedar-45",
+        "ports": 24,
+        "power": "24 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.6274214000441134
+    },
+    {
+      "case_id": "clear-03",
+      "condition": "clear",
+      "recipe": "overview",
+      "source_sha256": "6624c5dc802e80b2b0828b339b032dc0ce98bdcaf8928fc4dba103074f18bd7b",
+      "image": "clear-03/normalized/6624c5dc802e80b2-b80ca0d07087.png",
+      "image_sha256": "eeebc88d8a3f53dd8c12b79864e928a721c262783988aa71a57a69bac18c2908",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-7903",
+        "model": "Cedar-45",
+        "ports": 24,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL",
+        "\u2018ascot id: LAB-7903",
+        "model: Cedar-45",
+        "ports: 24",
+        "power: 24VDC"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": "Cedar-45",
+        "ports": 24,
+        "power": "24VDC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5784838998224586
+    },
+    {
+      "case_id": "clear-03",
+      "condition": "clear",
+      "recipe": "crop",
+      "source_sha256": "6624c5dc802e80b2b0828b339b032dc0ce98bdcaf8928fc4dba103074f18bd7b",
+      "image": "clear-03/crop.png",
+      "image_sha256": "092224f3660647dc8e8aa9b48bb3cb22eb8164b973ff581e0cbb5bd46f98cb4b",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-7903",
+        "model": "Cedar-45",
+        "ports": 24,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "asset_id: LAB-7903",
+        "model: Cedar-45",
+        "ports: 24",
+        "power: 24 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-7903",
+        "model": "Cedar-45",
+        "ports": 24,
+        "power": "24 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.5663219999987632
+    },
+    {
+      "case_id": "clear-04",
+      "condition": "clear",
+      "recipe": "original",
+      "source_sha256": "0915c33e728f4421f05d31cabf8e08603c108da190ccf681dd82c7ec8e21ba69",
+      "image": "clear-04/original.png",
+      "image_sha256": "0915c33e728f4421f05d31cabf8e08603c108da190ccf681dd82c7ec8e21ba69",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-6823",
+        "model": "Cedar-68",
+        "ports": 16,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset_id: LAB-6823",
+        "model: Cedar-68",
+        "ports: 16",
+        "power: 48 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-6823",
+        "model": "Cedar-68",
+        "ports": 16,
+        "power": "48 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.5988175000529736
+    },
+    {
+      "case_id": "clear-04",
+      "condition": "clear",
+      "recipe": "overview",
+      "source_sha256": "0915c33e728f4421f05d31cabf8e08603c108da190ccf681dd82c7ec8e21ba69",
+      "image": "clear-04/normalized/0915c33e728f4421-b80ca0d07087.png",
+      "image_sha256": "eba6d9beb0844453685031edcb1fa657417f0e1766b8e6e20b4dc5712dacb94d",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-6823",
+        "model": "Cedar-68",
+        "ports": 16,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL",
+        "\u2018ascot id: LAB-6823",
+        "model: Cedar-68",
+        "pots: 16",
+        "power: 48VDC"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": "Cedar-68",
+        "ports": null,
+        "power": "48VDC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": false,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.6068249999079853
+    },
+    {
+      "case_id": "clear-04",
+      "condition": "clear",
+      "recipe": "crop",
+      "source_sha256": "0915c33e728f4421f05d31cabf8e08603c108da190ccf681dd82c7ec8e21ba69",
+      "image": "clear-04/crop.png",
+      "image_sha256": "c79277c74b1bdbbd56619b4c0e57eb3db2b5813f9790ac4844db98e7230b06df",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-6823",
+        "model": "Cedar-68",
+        "ports": 16,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "asset_id: LAB-6823",
+        "model: Cedar-68",
+        "ports: 16",
+        "power: 48 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-6823",
+        "model": "Cedar-68",
+        "ports": 16,
+        "power": "48 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.6253137998282909
+    },
+    {
+      "case_id": "clear-05",
+      "condition": "clear",
+      "recipe": "original",
+      "source_sha256": "52005e7fd665048182fa7a1cc7391631fc0afbb44cc49b1808a0c0644cf743d0",
+      "image": "clear-05/original.png",
+      "image_sha256": "52005e7fd665048182fa7a1cc7391631fc0afbb44cc49b1808a0c0644cf743d0",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-4179",
+        "model": "Cedar-51",
+        "ports": 24,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset_id: LAB-4179",
+        "model: Cedar-51",
+        "ports: 24",
+        "power: 48 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-4179",
+        "model": "Cedar-51",
+        "ports": 24,
+        "power": "48 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.5954352000262588
+    },
+    {
+      "case_id": "clear-05",
+      "condition": "clear",
+      "recipe": "overview",
+      "source_sha256": "52005e7fd665048182fa7a1cc7391631fc0afbb44cc49b1808a0c0644cf743d0",
+      "image": "clear-05/normalized/52005e7fd6650481-b80ca0d07087.png",
+      "image_sha256": "5480017c10c69823144bc7fabce2fbe467476cbc5c8e2ec1b2366a8ce8243966",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-4179",
+        "model": "Cedar-51",
+        "ports": 24,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL",
+        "\u2018ascot id: LAB-A79",
+        "model: Cedar St",
+        "ports: 24",
+        "power: 48VDC"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": "Cedar St",
+        "ports": 24,
+        "power": "48VDC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": false,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.7872707999777049
+    },
+    {
+      "case_id": "clear-05",
+      "condition": "clear",
+      "recipe": "crop",
+      "source_sha256": "52005e7fd665048182fa7a1cc7391631fc0afbb44cc49b1808a0c0644cf743d0",
+      "image": "clear-05/crop.png",
+      "image_sha256": "96e6ab4ac2123fa39963b2aa116ad96817d1f17dea6e488106907c8de6b1d930",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-4179",
+        "model": "Cedar-51",
+        "ports": 24,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "asset_id: LAB-4179",
+        "model: Cedar-51",
+        "ports: 24",
+        "power: 48 V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-4179",
+        "model": "Cedar-51",
+        "ports": 24,
+        "power": "48 V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": true
+      },
+      "exact": true,
+      "seconds_including_container": 0.5945204000454396
+    },
+    {
+      "case_id": "small_text-00",
+      "condition": "small_text",
+      "recipe": "original",
+      "source_sha256": "2d78a0d47a0cf294fb4f1e4eaf2c6b019ae6d272b34dc716edf3245dfe42c737",
+      "image": "small_text-00/original.png",
+      "image_sha256": "2d78a0d47a0cf294fb4f1e4eaf2c6b019ae6d272b34dc716edf3245dfe42c737",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-1333",
+        "model": "Cedar-54",
+        "ports": 8,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset id: LAB-1333,",
+        "model: Cedar-54",
+        "ports: 8",
+        "power: 12VDC"
+      ],
+      "fields": {
+        "asset_id": "LAB-1333,",
+        "model": "Cedar-54",
+        "ports": 8,
+        "power": "12VDC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5901581000071019
+    },
+    {
+      "case_id": "small_text-00",
+      "condition": "small_text",
+      "recipe": "overview",
+      "source_sha256": "2d78a0d47a0cf294fb4f1e4eaf2c6b019ae6d272b34dc716edf3245dfe42c737",
+      "image": "small_text-00/normalized/2d78a0d47a0cf294-b80ca0d07087.png",
+      "image_sha256": "6e073c1006e1f6ab1666ee9f30acaf980294ecbe95789479f82b2d51232de2ed",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-1333",
+        "model": "Cedar-54",
+        "ports": 8,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": null,
+        "ports": null,
+        "power": null
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": false,
+        "ports": false,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.596497000195086
+    },
+    {
+      "case_id": "small_text-00",
+      "condition": "small_text",
+      "recipe": "crop",
+      "source_sha256": "2d78a0d47a0cf294fb4f1e4eaf2c6b019ae6d272b34dc716edf3245dfe42c737",
+      "image": "small_text-00/crop.png",
+      "image_sha256": "4c0af06a961ce2235c8b4fddf72887795e4151d13d5b4d90c8fb176c3955d87b",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-1333",
+        "model": "Cedar-54",
+        "ports": 8,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "asset id: LAB-1333",
+        "model: Cedar-54",
+        "ports: 8",
+        "power: 12V Dc"
+      ],
+      "fields": {
+        "asset_id": "LAB-1333",
+        "model": "Cedar-54",
+        "ports": 8,
+        "power": "12V Dc"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5774681000038981
+    },
+    {
+      "case_id": "small_text-01",
+      "condition": "small_text",
+      "recipe": "original",
+      "source_sha256": "55c468a6bafd77b60a6dc7260494133cd91f6cbc67f218ff0e61c7a5a3a61ca7",
+      "image": "small_text-01/original.png",
+      "image_sha256": "55c468a6bafd77b60a6dc7260494133cd91f6cbc67f218ff0e61c7a5a3a61ca7",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-2273",
+        "model": "Cedar-14",
+        "ports": 8,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset id: LAB-2273",
+        "model: Cedar-t4",
+        "ports: 8",
+        "power:24 VDC"
+      ],
+      "fields": {
+        "asset_id": "LAB-2273",
+        "model": "Cedar-t4",
+        "ports": 8,
+        "power": "24 VDC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": false,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.6143501999322325
+    },
+    {
+      "case_id": "small_text-01",
+      "condition": "small_text",
+      "recipe": "overview",
+      "source_sha256": "55c468a6bafd77b60a6dc7260494133cd91f6cbc67f218ff0e61c7a5a3a61ca7",
+      "image": "small_text-01/normalized/55c468a6bafd77b6-b80ca0d07087.png",
+      "image_sha256": "346b52245d83d8a4fa6897a333e408e7b8c30b7136f79d61d7ab163c50c23722",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-2273",
+        "model": "Cedar-14",
+        "ports": 8,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": null,
+        "ports": null,
+        "power": null
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": false,
+        "ports": false,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5959936999715865
+    },
+    {
+      "case_id": "small_text-01",
+      "condition": "small_text",
+      "recipe": "crop",
+      "source_sha256": "55c468a6bafd77b60a6dc7260494133cd91f6cbc67f218ff0e61c7a5a3a61ca7",
+      "image": "small_text-01/crop.png",
+      "image_sha256": "5bbbd0c76667ed08e6172a6212d8c899585c8553ebc947d89b2eb74d294607a5",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-2273",
+        "model": "Cedar-14",
+        "ports": 8,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "asset id: LAB-2273",
+        "model: Cedar-14",
+        "ports: 8",
+        "power: 24V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-2273",
+        "model": "Cedar-14",
+        "ports": 8,
+        "power": "24V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5676161001902074
+    },
+    {
+      "case_id": "small_text-02",
+      "condition": "small_text",
+      "recipe": "original",
+      "source_sha256": "063e2706650351673ba71b7ccaa94b7fad537511b585962a29861f114f5f2342",
+      "image": "small_text-02/original.png",
+      "image_sha256": "063e2706650351673ba71b7ccaa94b7fad537511b585962a29861f114f5f2342",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-4602",
+        "model": "Cedar-67",
+        "ports": 16,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset id: LAB-4602",
+        "model: Cedar-67",
+        "ports: 16",
+        "power: 12VDC"
+      ],
+      "fields": {
+        "asset_id": "LAB-4602",
+        "model": "Cedar-67",
+        "ports": 16,
+        "power": "12VDC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5757786000613123
+    },
+    {
+      "case_id": "small_text-02",
+      "condition": "small_text",
+      "recipe": "overview",
+      "source_sha256": "063e2706650351673ba71b7ccaa94b7fad537511b585962a29861f114f5f2342",
+      "image": "small_text-02/normalized/063e270665035167-b80ca0d07087.png",
+      "image_sha256": "498f975c3cde7569646bbc967da6d2b5cb2e7826aee856ca7b18ffc0a5e2ccbf",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-4602",
+        "model": "Cedar-67",
+        "ports": 16,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": null,
+        "ports": null,
+        "power": null
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": false,
+        "ports": false,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5808919998817146
+    },
+    {
+      "case_id": "small_text-02",
+      "condition": "small_text",
+      "recipe": "crop",
+      "source_sha256": "063e2706650351673ba71b7ccaa94b7fad537511b585962a29861f114f5f2342",
+      "image": "small_text-02/crop.png",
+      "image_sha256": "2b1440ddb5b0003e5f16ee99ba9f3b5d107cadae1c9eb8bd1ea21d8e7384c17b",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-4602",
+        "model": "Cedar-67",
+        "ports": 16,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "asset id: LAB-4602",
+        "model: Cedar-67",
+        "ports: 16",
+        "power: 12V Dc"
+      ],
+      "fields": {
+        "asset_id": "LAB-4602",
+        "model": "Cedar-67",
+        "ports": 16,
+        "power": "12V Dc"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5916212000884116
+    },
+    {
+      "case_id": "small_text-03",
+      "condition": "small_text",
+      "recipe": "original",
+      "source_sha256": "88d6cb24f449a024f3045dbd2839019eaa2491e2fa256db0f02df62d64607741",
+      "image": "small_text-03/original.png",
+      "image_sha256": "88d6cb24f449a024f3045dbd2839019eaa2491e2fa256db0f02df62d64607741",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-5743",
+        "model": "Cedar-65",
+        "ports": 16,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset id: LAB-5743",
+        "model: Cedar-65",
+        "ports: 16",
+        "power:24 VDC"
+      ],
+      "fields": {
+        "asset_id": "LAB-5743",
+        "model": "Cedar-65",
+        "ports": 16,
+        "power": "24 VDC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.6145385999698192
+    },
+    {
+      "case_id": "small_text-03",
+      "condition": "small_text",
+      "recipe": "overview",
+      "source_sha256": "88d6cb24f449a024f3045dbd2839019eaa2491e2fa256db0f02df62d64607741",
+      "image": "small_text-03/normalized/88d6cb24f449a024-b80ca0d07087.png",
+      "image_sha256": "de254000c7d6b9989014fdbf55909a70e77c6606cf1c2160155d1d0ddc8cb7cf",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-5743",
+        "model": "Cedar-65",
+        "ports": 16,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": null,
+        "ports": null,
+        "power": null
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": false,
+        "ports": false,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5641570000443608
+    },
+    {
+      "case_id": "small_text-03",
+      "condition": "small_text",
+      "recipe": "crop",
+      "source_sha256": "88d6cb24f449a024f3045dbd2839019eaa2491e2fa256db0f02df62d64607741",
+      "image": "small_text-03/crop.png",
+      "image_sha256": "431475c668313b4ff56ddf465ec142982aa8937400275fbbb39e1d1c54951fbe",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-5743",
+        "model": "Cedar-65",
+        "ports": 16,
+        "power": "24 V DC"
+      },
+      "lines": [
+        "asset id: LAB-5743",
+        "model: Cedar-65",
+        "ports: 16",
+        "power: 24V DC"
+      ],
+      "fields": {
+        "asset_id": "LAB-5743",
+        "model": "Cedar-65",
+        "ports": 16,
+        "power": "24V DC"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5544241000898182
+    },
+    {
+      "case_id": "small_text-04",
+      "condition": "small_text",
+      "recipe": "original",
+      "source_sha256": "2b2707722488e87530fa4de578925eedcfe7afd776118b21f8c16b7a09edc732",
+      "image": "small_text-04/original.png",
+      "image_sha256": "2b2707722488e87530fa4de578925eedcfe7afd776118b21f8c16b7a09edc732",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-8254",
+        "model": "Cedar-68",
+        "ports": 24,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset id: LAB-6254",
+        "model: Cedar-68",
+        "ports: 24",
+        "power: 48 VDC"
+      ],
+      "fields": {
+        "asset_id": "LAB-6254",
+        "model": "Cedar-68",
+        "ports": 24,
+        "power": "48 VDC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.6221241999883205
+    },
+    {
+      "case_id": "small_text-04",
+      "condition": "small_text",
+      "recipe": "overview",
+      "source_sha256": "2b2707722488e87530fa4de578925eedcfe7afd776118b21f8c16b7a09edc732",
+      "image": "small_text-04/normalized/2b2707722488e875-b80ca0d07087.png",
+      "image_sha256": "176f77d86d9aa16ab26258d83001996d82259bb1938edeec77539b3943963eaa",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-8254",
+        "model": "Cedar-68",
+        "ports": 24,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": null,
+        "ports": null,
+        "power": null
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": false,
+        "ports": false,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5768199998419732
+    },
+    {
+      "case_id": "small_text-04",
+      "condition": "small_text",
+      "recipe": "crop",
+      "source_sha256": "2b2707722488e87530fa4de578925eedcfe7afd776118b21f8c16b7a09edc732",
+      "image": "small_text-04/crop.png",
+      "image_sha256": "e88ab1f74636cab2c72419df062153ac232ece77dbd96f49f02161d8eddecfe9",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-8254",
+        "model": "Cedar-68",
+        "ports": 24,
+        "power": "48 V DC"
+      },
+      "lines": [
+        "asset id: LAB-6254",
+        "model: Cedar-68",
+        "ports: 24",
+        "power: 48 VDC"
+      ],
+      "fields": {
+        "asset_id": "LAB-6254",
+        "model": "Cedar-68",
+        "ports": 24,
+        "power": "48 VDC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5886309000197798
+    },
+    {
+      "case_id": "small_text-05",
+      "condition": "small_text",
+      "recipe": "original",
+      "source_sha256": "e23899b6fc9fdb2e84059ec1b116b60a595f4511d0f96035a196a25e0582a14d",
+      "image": "small_text-05/original.png",
+      "image_sha256": "e23899b6fc9fdb2e84059ec1b116b60a595f4511d0f96035a196a25e0582a14d",
+      "dimensions": [
+        960,
+        640
+      ],
+      "expected": {
+        "asset_id": "LAB-9943",
+        "model": "Cedar-55",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "SYNTHETIC EQUIPMENT LABEL",
+        "asset id: LAB-0943,",
+        "model: Cedar-55",
+        "ports: 4",
+        "power: 12VDC"
+      ],
+      "fields": {
+        "asset_id": "LAB-0943,",
+        "model": "Cedar-55",
+        "ports": 4,
+        "power": "12VDC"
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.6157859000377357
+    },
+    {
+      "case_id": "small_text-05",
+      "condition": "small_text",
+      "recipe": "overview",
+      "source_sha256": "e23899b6fc9fdb2e84059ec1b116b60a595f4511d0f96035a196a25e0582a14d",
+      "image": "small_text-05/normalized/e23899b6fc9fdb2e-b80ca0d07087.png",
+      "image_sha256": "f81ee9e97b116b5cbf43f1a3d64db936c67f8b12fe8747609705a457b68fc642",
+      "dimensions": [
+        320,
+        213
+      ],
+      "expected": {
+        "asset_id": "LAB-9943",
+        "model": "Cedar-55",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "\u2018SYNTHETIC EQUPMENT ABEL"
+      ],
+      "fields": {
+        "asset_id": null,
+        "model": null,
+        "ports": null,
+        "power": null
+      },
+      "correct_fields": {
+        "asset_id": false,
+        "model": false,
+        "ports": false,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5723339999094605
+    },
+    {
+      "case_id": "small_text-05",
+      "condition": "small_text",
+      "recipe": "crop",
+      "source_sha256": "e23899b6fc9fdb2e84059ec1b116b60a595f4511d0f96035a196a25e0582a14d",
+      "image": "small_text-05/crop.png",
+      "image_sha256": "2ff11cb8e09b4994bf1ef567dd4ec4926709f6d5418666022ffd53706ac26bd6",
+      "dimensions": [
+        550,
+        285
+      ],
+      "expected": {
+        "asset_id": "LAB-9943",
+        "model": "Cedar-55",
+        "ports": 4,
+        "power": "12 V DC"
+      },
+      "lines": [
+        "asset id: LAB-9943",
+        "model: Cedar-55",
+        "ports: 4",
+        "power: 12V Dc"
+      ],
+      "fields": {
+        "asset_id": "LAB-9943",
+        "model": "Cedar-55",
+        "ports": 4,
+        "power": "12V Dc"
+      },
+      "correct_fields": {
+        "asset_id": true,
+        "model": true,
+        "ports": true,
+        "power": false
+      },
+      "exact": false,
+      "seconds_including_container": 0.5691535000223666
+    }
+  ]
+}

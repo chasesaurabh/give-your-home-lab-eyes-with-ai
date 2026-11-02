@@ -1,0 +1,13 @@
+# OCR preprocessing protocol — November 2, 2026
+
+Recorded before this OCR comparison. Purpose: fulfill visual-plan V23 with real original/overview/crop OCR outputs and explicit provenance. No model inference or personal inputs.
+
+Use all six clear and six small_text original fictional labels from the existing label-challenges001 manifest. These images have been used in earlier VLM evaluation; this is a descriptive preprocessing comparison, not a new untouched holdout. Keep source hashes and expected fields from that manifest.
+
+Three recipes per image, 36 OCR jobs total: unchanged 960x640 original PNG; normalize-v2 overview at max edge320 (320x213); native-resolution crop [100,160,650,445] from the original upright pixels (550x285, right/bottom exclusive). The crop is chosen from the known generator geometry before outputs and includes all four field lines while excluding the title. It is an oracle/known-template crop, not an automatic label detector. No sharpening, thresholding, interpolation beyond the declared overview resize, or enlargement.
+
+Use existing tools image book4-tools:research001, actual image ID recorded, Tesseract5.3.0 English, --psm6, all recipes same settings. Restricted CPU Docker worker: networknone, readonly root and selected image mount, UID10001, capdropALL, no-new-privileges,2GB/2CPU, bounded60second subprocess with named-container cleanup on failure. Save original rawTSV, stderr, elapsed host wall time including container startup, image hashes and dimensions. Time is integration latency, not isolated OCR engine speed. One invocation per recipe/image, no repeatability/throughput claim.
+
+Scoring: reconstruct line text from TSV word block/paragraph/line identifiers; extract only lines beginning asset_id (underscore or space accepted), model, ports or power followed by colon. String values strip surrounding whitespace only. Ports require all ASCII digits and are parsed as integer. Power collapses whitespace only; do not normalize identifiers or substitute characters. Missing/duplicate field lines fail that field; all four correct is an exact record. Publish field and whole-record counts with every failed output. No tuning of crop, segmentation or parser after seeing scores. If the protocol/implementation needs correction, preserve the first run and create a separately named follow-up.
+
+Validate each source hash and crop geometry; retain every submitted image. The figure must show an actual selected source and its real output, with aggregate counts for all12cases reported nearby. Distinguish known-template crop from generic capability. No claim about photographed equipment, perspective, handwriting or model accuracy.

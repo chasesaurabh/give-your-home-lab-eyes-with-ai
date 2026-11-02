@@ -1,0 +1,38 @@
+{
+  "clear/original": {
+    "records": 6,
+    "exact": 6,
+    "correct_fields": 24,
+    "errors": 0
+  },
+  "clear/overview": {
+    "records": 6,
+    "exact": 0,
+    "correct_fields": 9,
+    "errors": 0
+  },
+  "clear/crop": {
+    "records": 6,
+    "exact": 6,
+    "correct_fields": 24,
+    "errors": 0
+  },
+  "small_text/original": {
+    "records": 6,
+    "exact": 0,
+    "correct_fields": 14,
+    "errors": 0
+  },
+  "small_text/overview": {
+    "records": 6,
+    "exact": 0,
+    "correct_fields": 0,
+    "errors": 0
+  },
+  "small_text/crop": {
+    "records": 6,
+    "exact": 0,
+    "correct_fields": 17,
+    "errors": 0
+  }
+}

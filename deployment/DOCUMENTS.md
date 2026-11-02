@@ -49,6 +49,22 @@ To ask the local vision model for invoice fields, select a page PNG and run `hom
 
 Keep sources and derived text protected. Delete a disposable run directory only after verifying its exact path; no deletion command is executed automatically by these tools.
 
+## Review five labeled invoice fields
+
+With the completed page and OCR bundles above:
+
+```text
+homelab-vision extract-invoice runs/pages-first --ocr runs/ocr-first/result/ocr.json --output runs/invoice-fields
+```
+
+Open `runs/invoice-fields/review.html` locally. `fields.json` preserves candidates; copied PNGs retain page identity. The report shows full-page evidence and numbered OCR line boxes including each label. Direct text has no claimed measured region. It checks source/page hashes, matching OCR geometry and bounded boxes before building a complete report. Hash consistency is not authentication of an untrusted source.
+
+This `labeled-invoice-v1` parser recognizes exact lines beginning `Invoice:`, `Asset:`, `Quantity:`, `Unit price:` and `Total:`. It is for one simple synthetic invoice family, not arbitrary invoices or tables. Amounts require three uppercase currency letters, a space and a dot-decimal amount with two decimal places. Identifiers preserve exact characters; shape validity cannot distinguish a plausible O/0 error. Duplicate fields remain separate and prevent arithmetic/field selection. Currency must agree for the quantity-times-unit-price check.
+
+All outputs remain `review_required`. The report makes no database changes, corrects no OCR automatically and provides no persistent correction or accounting workflow. It copies full source pages, so five-field extraction is not redaction. Retain protected sources and reports under a deliberate policy.
+
+Actual integration: the digital page produced five direct-text and five OCR candidates, with all five agreeing and arithmetic passing for both methods. Its scanned counterpart produced five OCR candidates with passing arithmetic and no direct-text candidates. The absent path is reported as not comparable, not disagreement. Both pages represent one clean fictional invoice, not an accuracy benchmark. Deterministic tests cover duplicate totals, currency mismatch, strict formats, changed OCR identity, invalid boxes and HTML escaping; those constructed tests are distinct from actual OCR evidence.
+
 ## Page-cited retrieval
 
 After inspecting the pages and OCR, build a new derived index:

@@ -96,6 +96,10 @@ The [context follow-up](studies/context-followup-2026-11-02/README.md) reran the
 
 See [the document workflow](deployment/DOCUMENTS.md) for native page preparation and a network-disabled CPU OCR container. It includes a portable wrapper, exact limits, page/word provenance, synthetic fixtures and observed results. The converter routes pages for review; it does not automatically accept document facts.
 
+The `extract-invoice` command adds a model-free five-field review report for the documented labeled invoice family. It preserves direct-text and OCR candidates, draws OCR line boxes, checks arithmetic and path agreement, and retains conflicts without accepting records. See the document workflow for its limits and executed example.
+
+The [OCR preprocessing study](studies/ocr-preprocessing-2026-11-02/README.md) adds 36 actual CPU jobs comparing unchanged, overview and known-template crop inputs. Cropping improved some small-text fields but produced no completely correct small-text records under the declared strict rubric. Verify all recorded inputs and scores with `python experiments/verify_ocr_study.py`. These OCR jobs are separate from the 1,836 published VLM requests.
+
 ## Scope
 
 See [the video workflow](deployment/VIDEO.md) for the restricted decoder and original short-event experiment. Sparse and dense samples were actually decoded and checked against source pixels and timestamps. This is file-video evidence, not a live-camera or general event-detection benchmark.

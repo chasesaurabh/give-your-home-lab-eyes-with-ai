@@ -47,6 +47,10 @@ def main(argv=None) -> int:
     ocr.add_argument("--output", type=Path, required=True)
     ocr.add_argument("--tesseract", default="tesseract")
     ocr.add_argument("--psm", type=int, choices=[3,6,11], default=3)
+    fields = commands.add_parser('extract-invoice', help='Collect five labeled fields with text/OCR evidence for review')
+    fields.add_argument('bundle', type=Path)
+    fields.add_argument('--ocr', type=Path, required=True)
+    fields.add_argument('--output', type=Path, required=True)
     video = commands.add_parser("prepare-video", help="Decode bounded video samples with source timestamps")
     video.add_argument("source", type=Path)
     video.add_argument("--output", type=Path, required=True)
@@ -180,6 +184,10 @@ def main(argv=None) -> int:
         # Process timeout bounds normal hangs. This is not an OS security sandbox.
         subprocess.run([sys.executable, "-m", "homelab_vision.pdf", str(args.source), str(args.output)],
                        check=True, timeout=120)
+    elif args.command == 'extract-invoice':
+        from .fields import collect_invoice_fields
+        result = collect_invoice_fields(args.bundle, args.ocr, args.output)
+        print(json.dumps(dict(state=result['state'], pages=len(result['pages']))))
     elif args.command == "ocr-pages":
         from .ocr import ocr_bundle
         result = ocr_bundle(args.bundle,args.output,executable=args.tesseract,psm=args.psm)
