@@ -1,6 +1,6 @@
 # Prepare and inspect PDF pages
 
-This development workflow produces reviewable page evidence and a Tesseract OCR baseline. It does not implement the entire document-intelligence application yet.
+This local command pipeline prepares page evidence, runs OCR, collects five labeled invoice fields, searches excerpts and requests page-cited model proposals. It is a single-user reference, not a general invoice service or automated accounting system.
 
 For native PDF preparation:
 

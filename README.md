@@ -2,11 +2,20 @@
 
 Local vision applications and reproducible experiment tools for the book of the same name.
 
-**Development companion for the second edition.** Current code provides image-to-structured proposals, PDF/OCR evidence with page-cited search and answer proposals, bounded video decoding with per-frame descriptions and timestamp-linked search, source-bearing Markdown search, and controlled evaluation scripts. The full project and model study remain under development. This is not the frozen book release. A verified edition-2 book link and immutable release tag will be added when available.
+**Code companion for the second edition.** Version 1.0.0 provides image proposals, PDF/OCR fields and page-cited answers, screenshot investigation packets, reviewed inventory transactions, and timestamp-linked video and combined search. The recorded model studies are complete. The book itself remains in production; this code release does not establish retailer publication. The verified edition-2 book link will be added after publication. See [BOOK_EDITION.json](BOOK_EDITION.json) for the book/code mapping.
 
 Code is MIT licensed. Model weights and dependencies have separate licenses. Book text, covers, private documents and model weights are excluded.
 
 ## Install and test
+
+Acquire the tested second-edition code:
+
+```bash
+git clone --branch book-v2.0.0 --single-branch https://github.com/chasesaurabh/give-your-home-lab-eyes-with-ai.git
+cd give-your-home-lab-eyes-with-ai
+```
+
+The tag identifies this code release; the default branch may change. A detached checkout at a tag is expected. The ZIP archive for the same tag is also available from GitHub's tag page.
 
 Use Python 3.12 in a fresh virtual environment. From the repository directory:
 
@@ -14,7 +23,7 @@ Use Python 3.12 in a fresh virtual environment. From the repository directory:
 python -m venv .venv
 # Linux/macOS: source .venv/bin/activate
 # Windows PowerShell: .venv\Scripts\Activate.ps1
-python -m pip install -e .
+python -m pip install -e ".[documents,test]"
 python -m unittest discover -s tests -v
 ```
 
@@ -42,7 +51,7 @@ docker run --name homelab-vision-2b --gpus all -d -p 127.0.0.1:18104:8000 `
 docker logs -f homelab-vision-2b
 ```
 
-For bash use `--mount "type=bind,source=$(pwd)/models/qwen35-2b,target=/model,readonly"` and backslashes instead of PowerShell backticks. This configuration was tested on an RTX PRO 6000 Blackwell with 97,887 MiB total device memory. A 0.20 utilization setting is a fraction of that device, **not a minimum-GPU claim**. Smaller-GPU settings are being measured; do not assume this allocation is suitable for another GPU.
+For bash use `--mount "type=bind,source=$(pwd)/models/qwen35-2b,target=/model,readonly"` and backslashes instead of PowerShell backticks. This configuration was tested on an RTX PRO 6000 Blackwell with 97,887 MiB total device memory. A 0.20 utilization setting is a fraction of that device, **not a minimum-GPU claim**. A separately recorded 0.09 allocation completed the controlled 2B suite on the same workstation. That is not a physical smaller-GPU test; measure the intended workload on your device.
 
 Wait for server readiness. Loading may take minutes. Stop with `docker stop homelab-vision-2b`; resume with `docker start homelab-vision-2b`. Do not create another server on an occupied port.
 
@@ -118,4 +127,20 @@ The [inventory workflow](deployment/INVENTORY.md) now connects a label proposal 
 
 ## Paired precision study
 
-The [same-checkpoint online-FP8 study](studies/paired-fp8-2026-11-02/README.md) adds306actual requests and preserves the unchanged BF16 comparator. FP8 reduced the logged model-loading allocation, but was slower on recorded medians and did not resolve the similar-character failures. Strict and separately normalized scores,200ms total-device samples, raw replies and offline verification are included. This is development evidence, not a general accuracy or smaller-device guarantee.
+The [same-checkpoint online-FP8 study](studies/paired-fp8-2026-11-02/README.md) adds 306 actual requests and preserves the unchanged BF16 comparator. FP8 reduced the logged model-loading allocation, but was slower on recorded medians and did not resolve the similar-character failures. Strict and separately normalized scores, 200 ms total-device samples, raw replies and offline verification are included. This is development evidence, not a general accuracy or smaller-device guarantee.
+
+## Book chapters and projects
+
+| Chapters | Runnable entry points and evidence |
+|---|---|
+| 1–5 | Installation, `deployment/MODELS.md`, `normalize`, `analyze`, pipeline tests |
+| 6–10 | Image transforms, task schemas, original controlled/label model studies |
+| 11–15 and 24 | [PDF, OCR, fields, retrieval and answers](deployment/DOCUMENTS.md) |
+| 16–19 and 25 | [Screenshot investigation packets](deployment/PROJECTS.md); diagram study |
+| 20–23 | [Selected-file video](deployment/VIDEO.md); camera deployment remains a design extension |
+| 26 | [Reviewed inventory, rollback and backup](deployment/INVENTORY.md) |
+| 27 | [Combined document/video search](deployment/PROJECTS.md) |
+
+The six study directories preserve 1,944 VLM evaluation requests and a separate 36-job OCR comparison. Development and application probes are separate from those evaluation counts. Each study README identifies the offline verifier and its limits. The raw synthetic evidence is not a general model leaderboard.
+
+See [SECURITY.md](SECURITY.md) for boundaries and reporting, [CONTRIBUTING.md](CONTRIBUTING.md) for changes, and [THIRD_PARTY.md](THIRD_PARTY.md) for dependencies and asset rights. The default branch may evolve; use the immutable tag recorded for your edition.

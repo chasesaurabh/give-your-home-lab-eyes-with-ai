@@ -1,0 +1,11 @@
+{
+  "book_title": "Give Your Home Lab Eyes with AI",
+  "book_edition": 2,
+  "code_version": "1.0.0",
+  "code_tag": "book-v2.0.0",
+  "book_status": "in production; retailer publication not established",
+  "book_url": null,
+  "post_publication_task": "Verify the edition-2 public book destination, update README and this mapping, and retain the tested code tag.",
+  "tested_platform": "Windows workstation with Docker Linux containers/WSL2 and NVIDIA GPU for vLLM inference; CPU utilities and deterministic tests separate.",
+  "license": "MIT"
+}
