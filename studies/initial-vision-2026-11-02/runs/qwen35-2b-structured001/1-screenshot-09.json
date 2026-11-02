@@ -1,0 +1,95 @@
+{
+  "case_id": "screenshot-09",
+  "task": "screenshot",
+  "repeat": 1,
+  "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "456637816b48004c66439907e56e8c0b88692c3b0d3ed0d7cd1fc8ab652eb227"
+  ],
+  "started_utc": "2026-11-02T17:39:17.028872+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "service": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error_code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "retries": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "service",
+          "error_code",
+          "retries"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-af844648c6195792",
+    "object": "chat.completion",
+    "created": 1793641157,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"service\": \"ocr\", \"error_code\": \"E_ACCESS\", \"retries\": 1}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 650,
+      "total_tokens": 672,
+      "completion_tokens": 22,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 3,
+    "total_fields": 3,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 0.7069163001142442
+}

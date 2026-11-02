@@ -54,6 +54,7 @@ def main():
     p.add_argument('--wait-ready',type=int,default=0,help='Seconds to wait for the existing endpoint; never starts or restarts it')
     p.add_argument('--structured',action='store_true',help='Separate schema-constrained lane; never mix with prompt-only results')
     p.add_argument('--sample-gpu',action='store_true',help='Sample total-device memory at 200 ms; not exact allocation or minimum GPU requirement')
+    p.add_argument('--thinking',choices=['default','off','on'],default='default',help='Record explicit template mode when the model supports it')
     args=p.parse_args()
     endpoint=urlsplit(args.base)
     if (endpoint.scheme!='http' or endpoint.hostname not in ['127.0.0.1','::1'] or endpoint.username or endpoint.password
@@ -80,10 +81,12 @@ def main():
             print('Waiting for requested model endpoint',flush=True)
             time.sleep(10)
     args.output.mkdir(parents=True,exist_ok=False)
+    (args.output/'evaluator.py').write_bytes(Path(__file__).read_bytes())
     metadata=dict(timestamp=datetime.now(timezone.utc).isoformat(),suite_sha256=hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
         evaluator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),provider=provider,
         model=args.model,repeats=args.repeats,temperature=0,max_tokens=256,
         output_mode='json-schema' if args.structured else 'prompt-only',
+        thinking=args.thinking,
         cache_policy='Server defaults; record server configuration. Repeated input may use prefix/multimodal caching.')
     (args.output/'environment.json').write_text(json.dumps(metadata,indent=2),encoding='utf-8')
     sampler=None
@@ -106,12 +109,14 @@ def main():
                 data=base64.b64encode((args.suite/image['path']).read_bytes()).decode()
                 content.append({'type':'image_url','image_url':{'url':'data:image/png;base64,'+data}})
             payload=dict(model=args.model,messages=[{'role':'user','content':content}],temperature=0,max_tokens=256)
+            if args.thinking!='default':payload['chat_template_kwargs']={'enable_thinking':args.thinking=='on'}
             if args.structured:
                 schema=case.get('schema') or field_schema(case['expected'])
                 payload['response_format']={'type':'json_schema','json_schema':{'name':'fields','strict':True,'schema':schema}}
             start=time.perf_counter()
             result=dict(case_id=case['id'],task=case['task'],repeat=repeat,prompt=case['prompt'],image_hashes=[im['sha256'] for im in case['images']],
                 started_utc=datetime.now(timezone.utc).isoformat(),response_format=payload.get('response_format'))
+            result['chat_template_kwargs']=payload.get('chat_template_kwargs')
             try:
                 response=request(args.base,'/v1/chat/completions',payload)
                 result.update(response=response,score=score(response['choices'][0]['message']['content'],case['expected']))

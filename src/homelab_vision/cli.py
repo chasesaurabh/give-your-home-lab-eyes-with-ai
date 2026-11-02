@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
+import sys
 from dataclasses import asdict
 from pathlib import Path
 
@@ -33,6 +35,14 @@ def main(argv=None) -> int:
     search.add_argument("query")
     search.add_argument("files", nargs="+", type=Path)
     search.add_argument("--top-k", type=int, default=5)
+    pdf = commands.add_parser("prepare-pdf", help="Render page evidence and propose text/OCR routes")
+    pdf.add_argument("source", type=Path)
+    pdf.add_argument("--output", type=Path, required=True)
+    ocr = commands.add_parser("ocr-pages", help="Run local Tesseract on a verified page bundle")
+    ocr.add_argument("bundle", type=Path)
+    ocr.add_argument("--output", type=Path, required=True)
+    ocr.add_argument("--tesseract", default="tesseract")
+    ocr.add_argument("--psm", type=int, choices=[3,6,11], default=3)
     args = parser.parse_args(argv)
     if args.command == "analyze":
         if not 64 <= args.max_edge <= 4096:
@@ -61,6 +71,14 @@ def main(argv=None) -> int:
         print(json.dumps(dict(status="found" if hits else "not_found", hits=[
             dict(score=hit.score, text=hit.chunk.text, source=asdict(hit.chunk.source),
                  instruction_like=hit.chunk.instruction_like) for hit in hits]), indent=2))
+    elif args.command == "prepare-pdf":
+        # Process timeout bounds normal hangs. This is not an OS security sandbox.
+        subprocess.run([sys.executable, "-m", "homelab_vision.pdf", str(args.source), str(args.output)],
+                       check=True, timeout=120)
+    elif args.command == "ocr-pages":
+        from .ocr import ocr_bundle
+        result = ocr_bundle(args.bundle,args.output,executable=args.tesseract,psm=args.psm)
+        print(json.dumps(dict(state=result['state'],pages=len(result['pages']),engine=result['engine'])))
     return 0
 
 

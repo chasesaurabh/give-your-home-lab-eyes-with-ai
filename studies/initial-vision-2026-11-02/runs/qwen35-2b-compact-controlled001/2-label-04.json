@@ -1,0 +1,102 @@
+{
+  "case_id": "label-04",
+  "task": "label",
+  "repeat": 2,
+  "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "734e50075cdc38f299d169c640a6a39d18275beaba2bdea7d7af9399ec801d67"
+  ],
+  "started_utc": "2026-11-02T17:58:44.498214+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ports": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "power": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "model",
+          "ports",
+          "power"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-937e48814a845bbd",
+    "object": "chat.completion",
+    "created": 1793642324,
+    "model": "book4-qwen35-2b-compact",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"asset_id\": \"LAB-156\",\n  \"model\": \"Aspen-14\",\n  \"ports\": 8,\n  \"power\":  \"24 V DC\"\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 647,
+      "total_tokens": 696,
+      "completion_tokens": 49,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 4,
+    "total_fields": 4,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 1.6097594001330435
+}

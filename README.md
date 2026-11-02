@@ -2,7 +2,7 @@
 
 Local vision applications and reproducible experiment tools for the book of the same name.
 
-**Development companion for the second edition.** Current code provides a working image-to-structured-proposal command, source-bearing Markdown search, and controlled evaluation scripts. PDF applications, video integration and the full model study are under development. This is not the frozen book release. A verified edition-2 book link and immutable release tag will be added when available.
+**Development companion for the second edition.** Current code provides image-to-structured proposals, PDF page evidence and local OCR, source-bearing Markdown search, and controlled evaluation scripts. Complete document applications, video integration and the full model study remain under development. This is not the frozen book release. A verified edition-2 book link and immutable release tag will be added when available.
 
 Code is MIT licensed. Model weights and dependencies have separate licenses. Book text, covers, private documents and model weights are excluded.
 
@@ -78,7 +78,11 @@ python experiments/evaluate.py --suite runs/label-challenges --output runs/label
 
 Generators record hashes and ground truth. Inspect inputs before evaluating. The runner records raw responses, strict field scores and latency. `--sample-gpu` requires `nvidia-smi`; it samples total-device memory every 200 ms, may miss brief peaks, and includes other activity. Repeated-input caching prevents treating these times as uncached throughput. Three repeats of one image are not three independent examples.
 
-Keep prompt-only and `--structured` results separate. A schema does not make wrong values correct or prevent output-budget exhaustion. Keep failures in the denominator. Reviewed public study exports are pending.
+Keep prompt-only and `--structured` results separate. A schema does not make wrong values correct or prevent output-budget exhaustion. Keep failures in the denominator. The [initial study](studies/initial-vision-2026-11-02/README.md) includes 846 actual responses and original fictional inputs. Verify all hashes and recompute scores offline with `python experiments/verify_study.py`. Later models may need `--thinking off`; template defaults are not identical across model sizes.
+
+## PDF pages and local OCR
+
+See [the document workflow](deployment/DOCUMENTS.md) for native page preparation and a network-disabled CPU OCR container. It includes a portable wrapper, exact limits, page/word provenance, synthetic fixtures and observed results. The converter routes pages for review; it does not automatically accept document facts.
 
 ## Scope
 
@@ -87,4 +91,4 @@ Keep prompt-only and `--structured` results separate. A schema does not make wro
 - `fixtures/source`: fictional examples.
 - `tests`: deterministic boundary and local HTTP contract tests.
 
-Inventory and video primitives are not complete applications yet. PDF/OCR, semantic retrieval, live-camera monitoring and autonomous repair are not implemented in this development snapshot. See `TESTED_ENVIRONMENT.md` and `THIRD_PARTY.md`.
+Inventory and video primitives are not complete applications yet. Semantic retrieval, live-camera monitoring and autonomous repair are not implemented in this development snapshot. See `TESTED_ENVIRONMENT.md` and `THIRD_PARTY.md`.

@@ -1,0 +1,58 @@
+{
+  "case_id": "document-01",
+  "task": "document",
+  "repeat": 0,
+  "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "7b2f916b4ca9c0d888ef76a87ce903f684667bbd52624ed908ba4885449057de"
+  ],
+  "response": {
+    "id": "chatcmpl-bfcd8f52ef818992",
+    "object": "chat.completion",
+    "created": 1793640212,
+    "model": "book4-qwen3-vl-8b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"invoice_id\": \"INV-9239\",\n  \"quantity\": 8,\n  \"total_usd\": 472.0\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-0b08052d",
+    "usage": {
+      "prompt_tokens": 644,
+      "total_tokens": 680,
+      "completion_tokens": 36,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 3,
+    "total_fields": 3,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 0.8515726998448372
+}

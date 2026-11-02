@@ -1,0 +1,95 @@
+{
+  "case_id": "document-00",
+  "task": "document",
+  "repeat": 1,
+  "prompt": "Read the invoice. Return invoice_id, quantity (integer), total_usd (number). Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "7105c88d8998a2cd0344fbc84316d83eb1e2f525278b56789cbcff84e8e52679"
+  ],
+  "started_utc": "2026-11-02T17:40:02.018692+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "invoice_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "quantity": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "total_usd": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "invoice_id",
+          "quantity",
+          "total_usd"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-8f54b3ce1a8506df",
+    "object": "chat.completion",
+    "created": 1793641202,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"invoice_id\": \"INV-2545\",\n  \"quantity\": 8,\n  \"total_usd\": 336\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 648,
+      "total_tokens": 685,
+      "completion_tokens": 37,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 3,
+    "total_fields": 3,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 1.1286759001668543
+}

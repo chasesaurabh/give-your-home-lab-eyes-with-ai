@@ -1,0 +1,100 @@
+{
+  "case_id": "label-00",
+  "task": "label",
+  "repeat": 0,
+  "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "fa9f1ccbc94c5109596a96290d140e5caed988d11c68c3ae3e728d00a1d6102a"
+  ],
+  "started_utc": "2026-11-02T17:38:31.157828+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ports": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "power": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "model",
+          "ports",
+          "power"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-942b0b97aa567597",
+    "object": "chat.completion",
+    "created": 1793641111,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"asset_id\": \"LAB-567\",\n  \"model\": \"Maple-6\",\n  \"ports\": 4,\n  \"power\":                                                                                                                                                                                                                          ",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 647,
+      "total_tokens": 903,
+      "completion_tokens": 256,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": false,
+    "correct_fields": 0,
+    "total_fields": 4,
+    "exact": false
+  },
+  "seconds": 8.332143099978566
+}

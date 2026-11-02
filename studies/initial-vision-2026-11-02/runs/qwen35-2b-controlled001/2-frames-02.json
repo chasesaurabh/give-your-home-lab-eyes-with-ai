@@ -1,0 +1,58 @@
+{
+  "case_id": "frames-02",
+  "task": "frames",
+  "repeat": 2,
+  "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "608e28a834ac46f230cb3af10779b44b4bad046b752ac2f8627ddab198dd7ee5",
+    "a7845f470f5f812ee7269e1513c395c669610b21f90d2014dff0a2b732c2b637",
+    "ad0747990737a04fc2ca6747020fbb83cf9700fd0da068b9586e37c27247ac50"
+  ],
+  "response": {
+    "id": "chatcmpl-844102817caefc85",
+    "object": "chat.completion",
+    "created": 1793640931,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```json\n[\n  {\n    \"first_alarm_seconds\": 34\n  }\n]\n```",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 1856,
+      "total_tokens": 1881,
+      "completion_tokens": 25,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": false,
+    "correct_fields": 0,
+    "total_fields": 1,
+    "exact": false
+  },
+  "seconds": 0.8487879999447614
+}

@@ -1,0 +1,58 @@
+{
+  "case_id": "counting-07",
+  "task": "counting",
+  "repeat": 0,
+  "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "5db78f6f1989d917ba49f6d66aad961fc9fc5edb0f75b8f866729ab369a95fc1"
+  ],
+  "response": {
+    "id": "chatcmpl-9720b3ec5dadd872",
+    "object": "chat.completion",
+    "created": 1793640215,
+    "model": "book4-qwen3-vl-8b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"circles\": 7,\n  \"squares\": 8\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-0b08052d",
+    "usage": {
+      "prompt_tokens": 640,
+      "total_tokens": 659,
+      "completion_tokens": 19,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 1,
+    "total_fields": 2,
+    "exact": false,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 0.48104460001923144
+}

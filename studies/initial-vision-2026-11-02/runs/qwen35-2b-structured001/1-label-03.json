@@ -1,0 +1,102 @@
+{
+  "case_id": "label-03",
+  "task": "label",
+  "repeat": 1,
+  "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "254eb38ba2fc4bed8aba2c62e75831b09cf6d60755a831960bd9faf048f1f3f7"
+  ],
+  "started_utc": "2026-11-02T17:39:13.313596+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ports": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "power": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "model",
+          "ports",
+          "power"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-b60c685e1440c373",
+    "object": "chat.completion",
+    "created": 1793641153,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"asset_id\": \"LAB-278\",\n  \"model\": \"Juniper-16\",\n  \"ports\": 16,\n  \"power\": \"12 V DC\"\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 647,
+      "total_tokens": 696,
+      "completion_tokens": 49,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 4,
+    "total_fields": 4,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 1.480827399995178
+}

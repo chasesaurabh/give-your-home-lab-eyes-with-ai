@@ -1,0 +1,88 @@
+{
+  "case_id": "counting-05",
+  "task": "counting",
+  "repeat": 2,
+  "prompt": "Count all filled shapes. Return circles (integer), squares (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "4599a262e29e90ca66ccb7f8926fda84e6f9949793d3951c83cd6fdda6434180"
+  ],
+  "started_utc": "2026-11-02T17:40:38.999526+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "circles": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "squares": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "circles",
+          "squares"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-8b68728cb308682b",
+    "object": "chat.completion",
+    "created": 1793641239,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"circles\": 6,\n  \"squares\": 3\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 644,
+      "total_tokens": 665,
+      "completion_tokens": 21,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 2,
+    "total_fields": 2,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 0.9712668999563903
+}

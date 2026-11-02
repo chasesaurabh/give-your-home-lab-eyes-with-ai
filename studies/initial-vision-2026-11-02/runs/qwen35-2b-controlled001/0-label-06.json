@@ -1,0 +1,58 @@
+{
+  "case_id": "label-06",
+  "task": "label",
+  "repeat": 0,
+  "prompt": "Read the equipment label. Return asset_id, model, ports (integer), power. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "ae1d8f77ee591f94fd8ade7b269357763f97f548dc5d13e4d18f247a273b069d"
+  ],
+  "response": {
+    "id": "chatcmpl-9386f72505df5b0e",
+    "object": "chat.completion",
+    "created": 1793640819,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"asset_id\": \"LAB-815\",\n  \"model\": \"Maple-17\",\n  \"ports\": 24,\n  \"power\": 5\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 647,
+      "total_tokens": 692,
+      "completion_tokens": 45,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 3,
+    "total_fields": 4,
+    "exact": false,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 1.4798218000214547
+}

@@ -1,0 +1,88 @@
+{
+  "case_id": "chart-02",
+  "task": "chart",
+  "repeat": 1,
+  "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "76433304cebc5eef7545d21fdeaff4ae7cbedee4975a6cc2a2a9210699426920"
+  ],
+  "started_utc": "2026-11-02T17:39:09.901496+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "highest_node": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "jobs_b": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "highest_node",
+          "jobs_b"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-8b1c273ada30e655",
+    "object": "chat.completion",
+    "created": 1793641149,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"highest_node\": \"D\",\n  \"jobs_b\": 75\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 648,
+      "total_tokens": 670,
+      "completion_tokens": 22,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 2,
+    "total_fields": 2,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 0.7170454999431968
+}

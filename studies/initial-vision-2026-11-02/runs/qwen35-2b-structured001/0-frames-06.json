@@ -1,0 +1,83 @@
+{
+  "case_id": "frames-06",
+  "task": "frames",
+  "repeat": 0,
+  "prompt": "These frames are chronological. Return first_alarm_seconds (integer), the timestamp of the first frame showing ALARM. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "2809d075d1456778e6a4ce930e495e43bb55d1ac9dbb9bb4a7b792c1a4de1e63",
+    "e608ea77a9954fb72d2cad8cfe2765fec0c19cbe629e6384c5d2cf85080b0f4b",
+    "71f5cfcdeec0a5247acb50d0c86845bb1d6127000bcd1f1df2e7c039ac84006e"
+  ],
+  "started_utc": "2026-11-02T17:38:29.303254+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "first_alarm_seconds": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "first_alarm_seconds"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-8ba795a97bf47a0c",
+    "object": "chat.completion",
+    "created": 1793641109,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"first_alarm_seconds\": 19\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 1856,
+      "total_tokens": 1870,
+      "completion_tokens": 14,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 1,
+    "total_fields": 1,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 0.5513593999203295
+}

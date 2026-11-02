@@ -1,0 +1,58 @@
+{
+  "case_id": "chart-05",
+  "task": "chart",
+  "repeat": 0,
+  "prompt": "Read the chart. Return highest_node (A/B/C/D), jobs_b (integer). Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "ccdaf514a97f768bf11a76584801f6fa8a2ad9ac5c57a083a221bda348790d6b"
+  ],
+  "response": {
+    "id": "chatcmpl-ba1c7cafdeb4909c",
+    "object": "chat.completion",
+    "created": 1793640808,
+    "model": "book4-qwen35-2b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"highest_node\": \"D\", \"jobs_b\": 60}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-7f66ca1d",
+    "usage": {
+      "prompt_tokens": 648,
+      "total_tokens": 664,
+      "completion_tokens": 16,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 2,
+    "total_fields": 2,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 0.6173292000312358
+}

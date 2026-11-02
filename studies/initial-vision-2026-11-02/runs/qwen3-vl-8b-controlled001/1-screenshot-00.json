@@ -1,0 +1,58 @@
+{
+  "case_id": "screenshot-00",
+  "task": "screenshot",
+  "repeat": 1,
+  "prompt": "Read the simulated terminal. Return service, error_code, retries (integer). Do not propose actions. Return only one JSON object with exactly those keys. Use null if unreadable.",
+  "image_hashes": [
+    "1f94ec59f2f1b9a3ac6f4415854d82a28ef027957ed06ac1bba550a5ce285917"
+  ],
+  "response": {
+    "id": "chatcmpl-9996490aaca90a7d",
+    "object": "chat.completion",
+    "created": 1793640225,
+    "model": "book4-qwen3-vl-8b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"service\": \"camera\",\n  \"error_code\": \"E_ACCESS\",\n  \"retries\": 4\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-0b08052d",
+    "usage": {
+      "prompt_tokens": 646,
+      "total_tokens": 673,
+      "completion_tokens": 27,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 3,
+    "total_fields": 3,
+    "exact": true,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 0.5894716000184417
+}

@@ -4,13 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "homelab-vision-reference"
-version = "0.1.0"
+version = "0.2.0"
 description = "Local vision applications and reproducible experiments for Give Your Home Lab Eyes with AI"
 requires-python = ">=3.12"
 dependencies = ["Pillow>=12.3,<13", "jsonschema>=4.26,<5"]
 
 [project.optional-dependencies]
 documents = ["pypdfium2>=5.14,<6"]
+test = ["reportlab>=4.4,<5", "pypdf>=6,<7"]
 
 [project.scripts]
 homelab-vision = "homelab_vision.cli:main"
