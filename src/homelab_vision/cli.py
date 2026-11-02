@@ -71,8 +71,48 @@ def main(argv=None) -> int:
     adoc.add_argument("--output",type=Path,required=True)
     adoc.add_argument("--model",required=True)
     adoc.add_argument("--base",default="http://127.0.0.1:18104")
+    inventory = commands.add_parser('inventory', help='Review, commit, export and roll back local inventory')
+    inventory.add_argument('--database',type=Path,required=True)
+    actions = inventory.add_subparsers(dest='action',required=True)
+    actions.add_parser('init')
+    draft = actions.add_parser('prepare')
+    draft.add_argument('analysis',type=Path)
+    draft.add_argument('--output',type=Path,required=True)
+    draft.add_argument('--item-id',required=True)
+    draft.add_argument('--class',dest='equipment_class',required=True)
+    inspect = actions.add_parser('inspect')
+    inspect.add_argument('review',type=Path)
+    commit = actions.add_parser('commit')
+    commit.add_argument('review',type=Path)
+    commit.add_argument('--confirm-digest',required=True)
+    commit.add_argument('--reviewer',required=True)
+    actions.add_parser('export')
+    undo = actions.add_parser('rollback')
+    undo.add_argument('--event-id',type=int,required=True)
+    undo.add_argument('--reviewer',required=True)
+    undo.add_argument('--confirm',action='store_true')
+    backup = actions.add_parser('backup')
+    backup.add_argument('--output',type=Path,required=True)
     args = parser.parse_args(argv)
-    if args.command == "analyze":
+    if args.command == 'inventory':
+        from . import inventory_app as app
+        if args.action == 'init':
+            app.initialize(args.database)
+            result = dict(state='initialized')
+        elif args.action == 'prepare':
+            result = app.prepare(args.analysis,args.database,args.output,args.item_id,args.equipment_class)
+        elif args.action == 'inspect':
+            result = app.inspect_review(args.review,args.database)
+        elif args.action == 'commit':
+            result = app.commit_review(args.review,args.database,args.confirm_digest,args.reviewer)
+        elif args.action == 'export':
+            result = app.export_inventory(args.database)
+        elif args.action == 'rollback':
+            result = app.undo(args.database,args.event_id,args.reviewer,args.confirm)
+        else:
+            result = app.backup(args.database,args.output)
+        print(json.dumps(result,indent=2))
+    elif args.command == "analyze":
         if not 64 <= args.max_edge <= 4096:
             parser.error("max-edge must be between 64 and 4096")
         args.output.mkdir(parents=True, exist_ok=False)

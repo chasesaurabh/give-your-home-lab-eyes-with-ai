@@ -9,6 +9,8 @@ from homelab_vision.inventory import (
     InventoryProposal,
     apply_confirmed_proposal,
     create_schema,
+    rollback_event,
+    item_revision,
 )
 
 
@@ -57,6 +59,35 @@ class InventoryTests(unittest.TestCase):
         )
         self.assertEqual(self.connection.execute("SELECT COUNT(*) FROM inventory").fetchone()[0], 1)
         self.assertEqual(self.connection.execute("SELECT COUNT(*) FROM change_events").fetchone()[0], 1)
+
+    def test_event_failure_rolls_back_inventory_write(self):
+        self.connection.execute("CREATE TRIGGER reject_event BEFORE INSERT ON change_events BEGIN SELECT RAISE(ABORT, 'injected failure'); END")
+        with self.assertRaises(sqlite3.IntegrityError):
+            apply_confirmed_proposal(self.connection,self.proposal,confirmed=True,approved_by='reviewer',expected_revision=0)
+        self.assertEqual(self.connection.execute('SELECT COUNT(*) FROM inventory').fetchone()[0],0)
+
+    def test_stale_review_and_old_rollback_cannot_overwrite(self):
+        apply_confirmed_proposal(self.connection,self.proposal,confirmed=True,approved_by='reviewer',expected_revision=0)
+        first=item_revision(self.connection,self.proposal.item_id)
+        with self.assertRaises(ConfirmationRequired):
+            apply_confirmed_proposal(self.connection,replace(self.proposal,model='changed'),confirmed=True,approved_by='reviewer',expected_revision=0)
+        apply_confirmed_proposal(self.connection,replace(self.proposal,model='changed'),confirmed=True,approved_by='reviewer',expected_revision=first)
+        second=item_revision(self.connection,self.proposal.item_id)
+        with self.assertRaises(ConfirmationRequired):
+            rollback_event(self.connection,first,confirmed=True,approved_by='reviewer')
+        rollback_event(self.connection,second,confirmed=True,approved_by='reviewer')
+        self.assertEqual(self.connection.execute('SELECT model FROM inventory').fetchone()[0],self.proposal.model)
+        self.assertEqual(self.connection.execute('SELECT COUNT(*) FROM change_events').fetchone()[0],3)
+
+    def test_rollback_create_retains_event_and_rejects_replay(self):
+        apply_confirmed_proposal(self.connection,self.proposal,confirmed=True,approved_by='reviewer',expected_revision=0)
+        first=item_revision(self.connection,self.proposal.item_id)
+        rollback_event(self.connection,first,confirmed=True,approved_by='reviewer')
+        self.assertEqual(self.connection.execute('SELECT COUNT(*) FROM inventory').fetchone()[0],0)
+        with self.assertRaises(ConfirmationRequired):
+            rollback_event(self.connection,first,confirmed=True,approved_by='reviewer')
+        with self.assertRaises(ConfirmationRequired):
+            apply_confirmed_proposal(self.connection,self.proposal,confirmed=True,approved_by='reviewer',expected_revision=0)
 
 
 if __name__ == "__main__":

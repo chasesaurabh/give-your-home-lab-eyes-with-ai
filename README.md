@@ -95,4 +95,4 @@ See [the video workflow](deployment/VIDEO.md) for the restricted decoder and ori
 - `fixtures/source`: fictional examples.
 - `tests`: deterministic boundary and local HTTP contract tests.
 
-Inventory integration remains under development. Semantic retrieval, live-camera monitoring and autonomous repair are not implemented in this snapshot. See `TESTED_ENVIRONMENT.md` and `THIRD_PARTY.md`.
+The [inventory workflow](deployment/INVENTORY.md) now connects a label proposal to an explicit review, revision-checked transaction, history-preserving rollback and database backup. Its local confirmation is not remote authentication. Semantic retrieval, live-camera monitoring and autonomous repair are not implemented in this snapshot. See `TESTED_ENVIRONMENT.md` and `THIRD_PARTY.md`.
