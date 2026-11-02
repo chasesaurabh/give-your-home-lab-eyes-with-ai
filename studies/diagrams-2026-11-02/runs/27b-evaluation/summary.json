@@ -1,0 +1,7 @@
+{
+  "requests": 36,
+  "exact": 15,
+  "errors": 0,
+  "split": "fixed_synthetic_diagrams",
+  "note": "Controlled synthetic task results, not general accuracy. Strict JSON/field score; inspect raw outputs and failure types."
+}

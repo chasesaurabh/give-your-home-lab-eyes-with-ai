@@ -102,6 +102,8 @@ The [OCR preprocessing study](studies/ocr-preprocessing-2026-11-02/README.md) ad
 
 ## Scope
 
+The [diagram transcription study](studies/diagrams-2026-11-02/README.md) adds 108 evaluation requests plus three separate development requests. Complete graph matches were 6/36 for 2B BF16, 15/36 for 27B BF16 and 20/36 for 122B NVFP4 with FP8 cache. All three transcribed the node and group labels correctly on every evaluation request, yet edge errors and record-contract failures remained. Six designs, two paired resolutions and three repeats do not constitute 36 independent diagrams. The study includes every raw reply, synthetic input and offline scorer. Published VLM evaluation requests now total 1,944; OCR jobs and development requests remain separate.
+
 See [the video workflow](deployment/VIDEO.md) for the restricted decoder and original short-event experiment. Sparse and dense samples were actually decoded and checked against source pixels and timestamps. This is file-video evidence, not a live-camera or general event-detection benchmark.
 
 - `src/homelab_vision`: image normalization, model adapter, contracts, lexical retrieval, confirmation-gated inventory primitive, policy, lineage, frame-sampling primitives.

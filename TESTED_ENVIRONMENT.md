@@ -2,6 +2,8 @@
 
 Observed November 2, 2026. This is not the final book release matrix.
 
+Latest development snapshot: 0.8.0, 81 source tests passing. The frozen diagram study completed 108 evaluation requests and three separate development requests with no request errors. Whole records: 2B 6/36, 27B 15/36, 122B 20/36. Node and group fields: 36/36 for each. The 27B dashed connectors were correctly recorded in dashed_edges but omitted from directed_edges in all twelve dashed/annotated requests; this contract failure is not evidence that the lines were unseen. Maximum sampled total-device memory was 19,712 / 74,243 / 95,255 MiB; request medians 4.041 / 6.999 / 8.853 seconds. These are three model/precision configurations on one 97,887 MiB device, with fractions 0.20 / 0.75 / 0.92, context 8192, one sequence, eager execution, thinking off and 512 output tokens. The 122B lane used NVFP4 weights and FP8 KV cache with uncalibrated-scale warnings. All three one-request development checks were schema-valid but semantically wrong; no prompt retuning followed. All named experiment servers were stopped after verified idle. See the diagram study for raw evidence and its offline verifier. Later historical counts below describe their original checkpoints.
+
 - Python 3.12 on Windows, Pillow 12.3.0, jsonschema 4.26.0.
 - 34 deterministic tests passed after adding the local HTTP adapter. The fixture server verifies actual local HTTP transport, schema rejection and redirect rejection. This is not a model benchmark.
 - Actual Qwen3.5-2B BF16 inference through vLLM 0.30.0 on an RTX PRO 6000 Blackwell Workstation Edition, driver 582.16, 97,887 MiB reported total memory.

@@ -1,0 +1,1632 @@
+{
+  "model": "vision-diagram-27b",
+  "requests": 36,
+  "exact": 15,
+  "request_errors": 0,
+  "field_correct": {
+    "nodes": 36,
+    "directed_edges": 15,
+    "undirected_edges": 33,
+    "dashed_edges": 36,
+    "group_membership": 36,
+    "dashed_meaning": 36,
+    "tls_labeled": 36
+  },
+  "records": [
+    {
+      "case_id": "annotated-1280",
+      "repeat": 0,
+      "seconds": 9.663653500145301,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "annotated-640",
+      "repeat": 0,
+      "seconds": 7.616302900016308,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "crossing-1280",
+      "repeat": 0,
+      "seconds": 7.2721977001056075,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "crossing-640",
+      "repeat": 0,
+      "seconds": 6.834583000047132,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": false,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "A->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": [
+              "A--E"
+            ]
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "dashed-1280",
+      "repeat": 0,
+      "seconds": 10.006638099905103,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "B->C",
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "dashed-640",
+      "repeat": 0,
+      "seconds": 6.787395100109279,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "B->C",
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "forward-1280",
+      "repeat": 0,
+      "seconds": 7.193195600062609,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "forward-640",
+      "repeat": 0,
+      "seconds": 7.0058597000315785,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "reverse-1280",
+      "repeat": 0,
+      "seconds": 6.965367600088939,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "E->B"
+            ],
+            "extra": [
+              "B->E"
+            ]
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "reverse-640",
+      "repeat": 0,
+      "seconds": 6.779913099948317,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "E->B"
+            ],
+            "extra": [
+              "B->E"
+            ]
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "undirected-1280",
+      "repeat": 0,
+      "seconds": 9.628832099959254,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "undirected-640",
+      "repeat": 0,
+      "seconds": 6.86889660009183,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "annotated-1280",
+      "repeat": 1,
+      "seconds": 9.101158800069243,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "annotated-640",
+      "repeat": 1,
+      "seconds": 6.991760200122371,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "crossing-1280",
+      "repeat": 1,
+      "seconds": 6.618319700006396,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "crossing-640",
+      "repeat": 1,
+      "seconds": 6.828511500032619,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": false,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "A->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": [
+              "A--E"
+            ]
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "dashed-1280",
+      "repeat": 1,
+      "seconds": 9.450687699951231,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "B->C",
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "dashed-640",
+      "repeat": 1,
+      "seconds": 7.037414200138301,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "B->C",
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "forward-1280",
+      "repeat": 1,
+      "seconds": 6.569905600044876,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "forward-640",
+      "repeat": 1,
+      "seconds": 7.0463849999941885,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "reverse-1280",
+      "repeat": 1,
+      "seconds": 6.616016499930993,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "E->B"
+            ],
+            "extra": [
+              "B->E"
+            ]
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "reverse-640",
+      "repeat": 1,
+      "seconds": 6.790125499945134,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "E->B"
+            ],
+            "extra": [
+              "B->E"
+            ]
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "undirected-1280",
+      "repeat": 1,
+      "seconds": 9.580223800148815,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "undirected-640",
+      "repeat": 1,
+      "seconds": 6.638022999977693,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "annotated-1280",
+      "repeat": 2,
+      "seconds": 8.877949499990791,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "annotated-640",
+      "repeat": 2,
+      "seconds": 6.418664499884471,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "crossing-1280",
+      "repeat": 2,
+      "seconds": 6.610094200121239,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "crossing-640",
+      "repeat": 2,
+      "seconds": 6.851262500043958,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": false,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "A->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": [
+              "A--E"
+            ]
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "dashed-1280",
+      "repeat": 2,
+      "seconds": 9.37062370008789,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "B->C",
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "dashed-640",
+      "repeat": 2,
+      "seconds": 7.421026700176299,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "B->C",
+              "D->E"
+            ],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "forward-1280",
+      "repeat": 2,
+      "seconds": 6.66853589983657,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "forward-640",
+      "repeat": 2,
+      "seconds": 6.523954700212926,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "reverse-1280",
+      "repeat": 2,
+      "seconds": 7.366928800009191,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "E->B"
+            ],
+            "extra": [
+              "B->E"
+            ]
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "reverse-640",
+      "repeat": 2,
+      "seconds": 6.612701099831611,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "E->B"
+            ],
+            "extra": [
+              "B->E"
+            ]
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "undirected-1280",
+      "repeat": 2,
+      "seconds": 8.972638600040227,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    },
+    {
+      "case_id": "undirected-640",
+      "repeat": 2,
+      "seconds": 7.490236300043762,
+      "error": false,
+      "order_sensitive_exact": true,
+      "score": {
+        "json_valid": true,
+        "exact": true,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": true,
+          "undirected_edges": true,
+          "dashed_edges": true,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    }
+  ],
+  "note": "Array order ignored; duplicates, changed characters and extra keys are not repaired. Paired resolutions and repeated pixels are not independent cases."
+}

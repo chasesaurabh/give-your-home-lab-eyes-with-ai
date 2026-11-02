@@ -1,0 +1,120 @@
+{
+  "case_id": "reverse-1280",
+  "task": "reverse",
+  "repeat": 2,
+  "prompt": "Transcribe only the visible diagram. Return JSON with nodes (node IDs), directed_edges (strings X->Y), undirected_edges (strings X--Y with endpoints alphabetically ordered), dashed_edges (same notation as the corresponding directed or undirected edge), group_membership (strings X=Zone using each visible node ID and its group label), dashed_meaning (exact meaning word in the legend, or none when no dashed edges), and tls_labeled (boolean: whether any connector visibly has the label TLS). All first five fields are arrays of strings, sorted alphabetically with no duplicates. Count only drawn node boxes; group borders and connector crossings are not nodes. A connector without arrowheads is undirected. Do not invent edges at a crossing. Do not infer security properties beyond the visible TLS label. Return no extra keys.",
+  "image_hashes": [
+    "21e3b366fad838b4ec69a2d5017de0fa93a1087366909efc33f894d549d0c1ee"
+  ],
+  "started_utc": "2026-11-02T21:26:05.957991+00:00",
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "fields",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "directed_edges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "undirected_edges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dashed_edges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "group_membership": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dashed_meaning": {
+            "type": "string"
+          },
+          "tls_labeled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "nodes",
+          "directed_edges",
+          "undirected_edges",
+          "dashed_edges",
+          "group_membership",
+          "dashed_meaning",
+          "tls_labeled"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "response": {
+    "id": "chatcmpl-a2264bfa8332a1e8",
+    "object": "chat.completion",
+    "created": 1793654765,
+    "model": "vision-diagram-27b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\", \"F\"],\n  \"directed_edges\": [\"B->A\", \"B->E\", \"C->B\", \"E->D\", \"F->E\"],\n  \"undirected_edges\": [],\n  \"dashed_edges\": [],\n  \"group_membership\": [\"A=Ingress\", \"B=Worker\", \"C=Store\", \"D=Ingress\", \"E=Worker\", \"F=Store\"],\n  \"dashed_meaning\": \"none\",\n  \"tls_labeled\": false\n}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-4b464092",
+    "usage": {
+      "prompt_tokens": 1180,
+      "total_tokens": 1312,
+      "completion_tokens": 132,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "score": {
+    "json_valid": true,
+    "correct_fields": 6,
+    "total_fields": 7,
+    "exact": false,
+    "abstained_fields": 0,
+    "extra_keys": []
+  },
+  "seconds": 7.366928800009191
+}

@@ -1,0 +1,69 @@
+{
+  "model": "vision-diagram-122b",
+  "requests": 1,
+  "exact": 0,
+  "request_errors": 0,
+  "field_correct": {
+    "nodes": 1,
+    "directed_edges": 0,
+    "undirected_edges": 1,
+    "dashed_edges": 0,
+    "group_membership": 1,
+    "dashed_meaning": 1,
+    "tls_labeled": 1
+  },
+  "records": [
+    {
+      "case_id": "development-1280",
+      "repeat": 0,
+      "seconds": 8.888134599896148,
+      "error": false,
+      "order_sensitive_exact": false,
+      "score": {
+        "json_valid": true,
+        "exact": false,
+        "correct_fields": {
+          "nodes": true,
+          "directed_edges": false,
+          "undirected_edges": true,
+          "dashed_edges": false,
+          "group_membership": true,
+          "dashed_meaning": true,
+          "tls_labeled": true
+        },
+        "differences": {
+          "nodes": {
+            "missing": [],
+            "extra": []
+          },
+          "directed_edges": {
+            "missing": [
+              "Y->X"
+            ],
+            "extra": [
+              "X->Y"
+            ]
+          },
+          "undirected_edges": {
+            "missing": [],
+            "extra": []
+          },
+          "dashed_edges": {
+            "missing": [
+              "Y->X"
+            ],
+            "extra": [
+              "X->Y"
+            ]
+          },
+          "group_membership": {
+            "missing": [],
+            "extra": []
+          }
+        },
+        "extra_keys": []
+      }
+    }
+  ],
+  "note": "Array order ignored; duplicates, changed characters and extra keys are not repaired. Paired resolutions and repeated pixels are not independent cases."
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+<rect width="1280" height="800" fill="white"/>
+<text x="50" y="69" font-family="Arial,sans-serif" font-size="34" fill="#15232d">Synthetic process diagram</text>
+<rect x="50" y="150" width="560" height="500" fill="#f5f7f8" stroke="#9da9af" stroke-width="2"/>
+<text x="68" y="196" font-family="Arial,sans-serif" font-size="28" fill="#15232d">Source</text>
+<rect x="670" y="150" width="560" height="500" fill="#f5f7f8" stroke="#9da9af" stroke-width="2"/>
+<text x="688" y="196" font-family="Arial,sans-serif" font-size="28" fill="#15232d">Sink</text>
+<line x1="870.0" y1="350.0" x2="410.0" y2="350.0" stroke="#172f40" stroke-width="4" stroke-dasharray="14 10"/>
+<polygon points="410.0,350.0 430.0,340.0 430.0,360.0" fill="#172f40"/>
+<rect x="250" y="310" width="160" height="80" fill="white" stroke="#172f40" stroke-width="3"/>
+<text x="318" y="364" font-family="Arial,sans-serif" font-size="34" fill="#15232d">X</text>
+<rect x="870" y="310" width="160" height="80" fill="white" stroke="#172f40" stroke-width="3"/>
+<text x="938" y="364" font-family="Arial,sans-serif" font-size="34" fill="#15232d">Y</text>
+<text x="50" y="738" font-family="Arial,sans-serif" font-size="28" fill="#15232d">Legend: dashed = optional</text>
+</svg>

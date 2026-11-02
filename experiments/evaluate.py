@@ -53,6 +53,7 @@ def main():
     p.add_argument('--base',default='http://127.0.0.1:18104')
     p.add_argument('--model',required=True)
     p.add_argument('--repeats',type=int,default=3)
+    p.add_argument('--max-tokens',type=int,default=256,help='Declared output budget, recorded per run; default preserves earlier study settings')
     p.add_argument('--wait-ready',type=int,default=0,help='Seconds to wait for the existing endpoint; never starts or restarts it')
     p.add_argument('--structured',action='store_true',help='Separate schema-constrained lane; never mix with prompt-only results')
     p.add_argument('--sample-gpu',action='store_true',help='Sample total-device memory at 200 ms; not exact allocation or minimum GPU requirement')
@@ -64,6 +65,7 @@ def main():
         p.error('This harness requires an HTTP loopback literal with no credentials, path, query or fragment')
     args.base=args.base.rstrip('/')
     if args.repeats<1: p.error('repeats must be positive')
+    if not 1<=args.max_tokens<=4096:p.error('max-tokens must be1through4096')
     manifest_path=args.suite/'manifest.json'
     manifest=json.loads(manifest_path.read_text(encoding='utf-8'))
     for case in manifest['cases']:
@@ -86,7 +88,7 @@ def main():
     (args.output/'evaluator.py').write_bytes(Path(__file__).read_bytes())
     metadata=dict(timestamp=datetime.now(timezone.utc).isoformat(),suite_sha256=hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
         evaluator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),provider=provider,
-        model=args.model,repeats=args.repeats,temperature=0,max_tokens=256,
+        model=args.model,repeats=args.repeats,temperature=0,max_tokens=args.max_tokens,
         output_mode='json-schema' if args.structured else 'prompt-only',
         thinking=args.thinking,
         cache_policy='Server defaults; record server configuration. Repeated input may use prefix/multimodal caching.')
@@ -110,7 +112,7 @@ def main():
             for image in case['images']:
                 data=base64.b64encode((args.suite/image['path']).read_bytes()).decode()
                 content.append({'type':'image_url','image_url':{'url':'data:image/png;base64,'+data}})
-            payload=dict(model=args.model,messages=[{'role':'user','content':content}],temperature=0,max_tokens=256)
+            payload=dict(model=args.model,messages=[{'role':'user','content':content}],temperature=0,max_tokens=args.max_tokens)
             if args.thinking!='default':payload['chat_template_kwargs']={'enable_thinking':args.thinking=='on'}
             if args.structured:
                 schema=case.get('schema') or field_schema(case['expected'])
