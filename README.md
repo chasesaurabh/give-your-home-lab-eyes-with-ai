@@ -2,7 +2,7 @@
 
 Local vision applications and reproducible experiment tools for the book of the same name.
 
-**Code companion for the second edition.** Version 1.0.0 provides image proposals, PDF/OCR fields and page-cited answers, screenshot investigation packets, reviewed inventory transactions, and timestamp-linked video and combined search. The recorded model studies are complete. The book itself remains in production; this code release does not establish retailer publication. The verified edition-2 book link will be added after publication. See [BOOK_EDITION.json](BOOK_EDITION.json) for the book/code mapping.
+**Code companion for the second edition.** Version 1.0.0 provides image proposals, PDF/OCR fields and page-cited answers, screenshot investigation packets, reviewed inventory transactions, and timestamp-linked video and combined search. See [BOOK_EDITION.json](BOOK_EDITION.json) for the matching book edition and code version. A verified book link will be added when available.
 
 Code is MIT licensed. Model weights and dependencies have separate licenses. Book text, covers, private documents and model weights are excluded.
 

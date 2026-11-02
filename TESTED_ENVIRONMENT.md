@@ -1,40 +1,40 @@
-# Development verification
+# Tested environment and evidence
 
-Observed November 2, 2026. This is not the final book release matrix.
+Code version 1.0.0, tested November 2, 2026. The deterministic suite passed 81 tests in the source checkout and a fresh public clone. These test code contracts; model results are recorded separately below.
 
-Code release 1.0.0 retains the tested implementation from development 0.8.0, with reader documentation and release mapping completed. The recorded source and independent public-clone checks passed 81 tests. Final release acquisition verification is recorded separately in the production release record. The frozen diagram study completed 108 evaluation requests and three separate development requests with no request errors. Whole records: 2B 6/36, 27B 15/36, 122B 20/36. Node and group fields: 36/36 for each. The 27B dashed connectors were correctly recorded in dashed_edges but omitted from directed_edges in all twelve dashed/annotated requests; this contract failure is not evidence that the lines were unseen. Maximum sampled total-device memory was 19,712 / 74,243 / 95,255 MiB; request medians 4.041 / 6.999 / 8.853 seconds. These are three model/precision configurations on one 97,887 MiB device, with fractions 0.20 / 0.75 / 0.92, context 8192, one sequence, eager execution, thinking off and 512 output tokens. The 122B lane used NVFP4 weights and FP8 KV cache with uncalibrated-scale warnings. All three one-request development checks were schema-valid but semantically wrong; no prompt retuning followed. All named experiment servers were stopped after verified idle. See the diagram study for raw evidence and its offline verifier. Later historical counts below describe their original checkpoints.
+## Runtime
 
-- Python 3.12 on Windows, Pillow 12.3.0, jsonschema 4.26.0.
-- 34 deterministic tests passed after adding the local HTTP adapter. The fixture server verifies actual local HTTP transport, schema rejection and redirect rejection. This is not a model benchmark.
-- Actual Qwen3.5-2B BF16 inference through vLLM 0.30.0 on an RTX PRO 6000 Blackwell Workstation Edition, driver 582.16, 97,887 MiB reported total memory.
-- Actual `analyze --task label` integration test returned the four printed fields correctly on one original synthetic fixture. One successful example is not a general accuracy result.
-- Controlled suite: 60 original synthetic cases, three repeats each. Qwen3-VL-8B BF16 prompt-only: 171/180 exact. Qwen3.5-2B BF16 prompt-only: 54/180 exact. The same 2B with schema-constrained response format: 165/180 exact. Different model families/configurations do not establish a causal size ranking. The schema follow-up deliberately reused cases after format failures. Reviewed raw records are published in the two studies linked below; no private source files are included.
-- Tested Docker image ID: `sha256:8a69ffad015f138d7170c4ddc429e230a3bc1c1719f67e14324749df200a4b90`. Eager execution, 8,192-token context, one sequence, GPU utilization caps 0.20 (2B) and 0.35 (8B). Caps are not measured minimum-memory requirements.
+- Python 3.12 on Windows; Pillow 12.3.0 and jsonschema 4.26.0.
+- Inference: Docker Linux containers through WSL2, vLLM 0.30.0, NVIDIA RTX PRO 6000 Blackwell Workstation Edition, driver 582.16, 97,887 MiB reported device memory.
+- PDF: pypdfium2 5.14.0. OCR: Tesseract 5.3.0 in the restricted CPU worker. Video: FFmpeg 5.1.9 in the restricted decoder.
+- Model profiles and exact download revisions: [MODELS.md](deployment/MODELS.md). Recorded studies cover 2B and 8B BF16, 27B BF16/online FP8, and 122B NVFP4 with FP8 KV cache.
 
-Fresh virtual-environment installation of the initial code-only export and a separate clone from GitHub both passed all 34 then-current tests. The installed image command also completed against the real 2B endpoint, but its description misread the fictional dashboard identifier (`LAE-GW-01` instead of `LAB-GW-01`) and added unsupported grid-line detail. Transport/schema success does not mean factual success.
+## Reproducible studies
 
-Later document work passes 40 tests with the documents/test extras installed, including actual PDF conversion and OCR input rejection. Seven original PDF fixture types passed their routing/rejection checks. Tesseract 5.3.0 recovered all 25 words on each of two representations of one fictional invoice; every word box was within its page. The real OCR worker and portable wrapper ran with network disabled, non-root UID 10001, read-only root, dropped capabilities, 2 GB memory and two CPU cores. Tools image ID: `sha256:63c4810a73ecd5b7dcd31af523bde25df8d7381b3d7e145e7a0779151ac60deb`. PDFium wrapper: pypdfium2 5.14.0. This is an easy integration example, not a document/OCR benchmark.
+The six study directories preserve 1,944 VLM evaluation requests and 36 separate CPU OCR jobs. Development and application probes are separate. Each README provides configurations, raw records, scoring rules and an offline verifier.
 
-The same 2B model at allocation fraction 0.09 completed the 180-request structured study with 165 strict matches and no transport errors. Maximum sampled total-device use was 9,031 MiB, versus 19,795 MiB at fraction 0.20. Both experiments ran on the 97,887 MiB GPU; neither is a physical smaller-GPU test or a minimum-memory claim. The [public study](studies/initial-vision-2026-11-02/README.md) contains reviewed raw outputs and an offline hash/scoring verifier. Broader model, video and complete-application work remains in progress.
+| Study | Evidence |
+|---|---|
+| [Initial vision](studies/initial-vision-2026-11-02/README.md) | 846 requests, including prompt-only versus structured output and a smaller allocation on the same physical GPU |
+| [Large vision](studies/large-vision-2026-11-02/README.md) | 648 requests from 27B/122B configurations, including failures |
+| [Context follow-up](studies/context-followup-2026-11-02/README.md) | 36 requests testing a longer-context remedy after known failures |
+| [Paired precision](studies/paired-fp8-2026-11-02/README.md) | 306 online-FP8 requests with the preserved same-checkpoint BF16 comparator |
+| [Diagram transcription](studies/diagrams-2026-11-02/README.md) | 108 evaluation requests, plus three separate development requests |
+| [OCR preprocessing](studies/ocr-preprocessing-2026-11-02/README.md) | 36 CPU jobs comparing unchanged, overview and known-template crop inputs |
 
-Later source work passes 50 tests, including variable-rate selection, frame/citation tamper rejection, incomplete-analysis refusal, wrong-PDF OCR rejection, citation consistency and no-match behavior that makes no model request. These are code/contract checks, not model accuracy evidence. The actual restricted FFmpeg5.1.9 decoder passed pixel/timestamp checks for 36 constant-rate samples and four variable-rate samples; malformed input was rejected. Actual mixed-PDF indexing and page-cited retrieval found the printed invoice total through both native-text and OCR routes.
+## Executed application paths
 
-Actual122BNVFP4 application tests returned the correct cited invoice total and abstained on a wrong invoice ID and missing delivery address. Initial schema400errors and a logged multimodal-cache500error were preserved; a deliberate retry of the total question succeeded. Both concise-prompt video runs completed:6sparse/30dense status strings matched the original fictional clip, and lexical search returned no sparse alert versus2dense hits at2.2/2.4seconds. The earlier verbose6-frame development trial remains separate. These are small synthetic integration checks, not general application accuracy.
+The workflow guides distinguish actual integration checks from design extensions:
 
-The pinned122BNVFP4 model served through upstreamvLLM0.30.0with FP8KV, cap0.92,8192context, one sequence, eager and no requested CPU offload. Actual controlled study176/180strict; label challenge124/126strict; zero transport errors in those two studies. Sampled maxima95179/95181MiB. Runtime warnings about uncalibrated FP8scales are retained. Workload limits remain under test; the largest tested model is not proof of the largest possible model. Separate reader-facing launcher wrapper has dry-run validation; the equivalent research commands performed actual launches.
+- [Documents](deployment/DOCUMENTS.md): PDF routing, native text, restricted OCR, invoice-field review, indexing and page-cited answers.
+- [Video](deployment/VIDEO.md): constant/variable-rate decoding, sparse/dense sampling and timestamp-linked search on a fictional clip.
+- [Inventory](deployment/INVENTORY.md): proposal review, revision-checked transactions, rollback and backup reopening.
+- [Investigation and combined search](deployment/PROJECTS.md): screenshot evidence, escaped manual excerpts and joined PDF/video results.
 
+## Interpretation limits
 
-Inventory integration adds six meaningful tests (56 total at this checkpoint): injected event-write failure, stale review and old rollback rejection, history-preserving rollback, changed review digest, evidence tampering and backup reopening. Ten actual CLI lifecycle checks reused the preserved real 2B label extraction and passed their expected outcomes. The snapshot retained one item/one event after the current database was rolled back to zero items/two events. Same-disk backup only; no remote authentication or automatic retention. See deployment/INVENTORY.md.
+All model measurements come from one workstation and original synthetic inputs. Allocation fractions are not minimum-memory requirements or physical smaller-GPU tests. The 122B configuration is the largest tested here, not proof of the largest possible model. FP8 KV-scale warnings and failed requests remain in the evidence.
 
+Repeated examples are not independent samples. Sampled memory is total-device use at 200 ms intervals and may miss peaks; request times can include caching effects. Different families and precisions do not establish a causal model-size ranking. Schema-valid output can still be factually wrong. The context remedy reused known cases and is not held-out accuracy.
 
-The published launcher was exercised from public commit 54478f972fb968443ea07fc5a1b7b9757880fff9 with the 2B profile, fraction 0.09 and context 8192; readiness was observed after 191.25 seconds. Fresh published-code PDF/OCR/index execution completed. Actual 2B answers: matching invoice USD 69.00/page 2; wrong invoice ID incorrectly USD 69.00/page 2; missing address null. The later explicit identifier gate returned not_found without inference for the absent ID and preserved the correct matching answer. Original unguarded failure is retained.
-
-Actual 2B video runs completed 6 sparse and 30 dense frames. Exact main-status strings: 0/36 due headings/paraphrases. Search fan stopped still returned no sparse hit and dense timestamps 2.2/2.4. Exact-string grouping produced 5/18 groups, respectively. These facts do not justify merging transcription and retrieval metrics.
-
-Source tests now total 62, including identifier boundaries, case HTML escaping/citation preservation and combined-search ordering. Actual terminal extraction returned camera/E_ACCESS/4 on one fictional image. Its troubleshooting packet retrieved five excerpts from selected fictional documentation; review remains necessary. Combined document/video search also ran against the actual invoice and dense-frame evidence. No generated diagnosis, remote authentication or semantic embedding search is implemented.
-
-
-Normalizer-v2 adds a bounded source snapshot, metadata-free PNG output and explicit non-ICC color policy. All eight EXIF orientations were tested against pixel coordinate mapping; oversized bytes are rejected before decoding. The model-free normalize command and its 320/640-pixel chapter examples executed, including the center-coordinate mapping. Current source tests:68. An actual2Blabel request still returned all four fixture fields correctly after normalization changes. Browser review of document, video and troubleshooting HTML verified readable evidence. The case page now expands full escaped manual snapshots because top-five lexical excerpts omitted relevant context. The first Markdown link attempt downloaded rather than displaying the manual in this browser, so the final UI uses inline disclosure. No recognition improvement is inferred from these mechanics checks.
-
-
-Same27B checkpoint with onlineFP8 completed6/6development checks,174/180controlled strict (177with the prespecified power-format rule) and108/126label challenges, with zero request errors. Both BF16/FP8 failed all18similar-character requests and handled all18hidden-ID cases correctly. Model-loading allocations51.1/28.06GiB; availableKV18.2/41.44GiB; controlled sampled maxima74305/74579MiB. The same0.75fraction expands cache instead of halving total allocation. Controlled medians1.596/1.797s; challenge medians2.742/3.093s. FP8ready734.782s including loading/warmup, single observed startup, not an uncached-storage benchmark. Final logs saved and server stopped after zero running/waiting requests. See paired study for exact configurations and raw evidence.
+These tools require human review. Live-camera monitoring, semantic embeddings, autonomous repair and remote multi-user authentication are outside this snapshot. See [SECURITY.md](SECURITY.md) and the individual study limitations before adapting the code.
